@@ -29,12 +29,13 @@ export async function writeStory(group: GroupMember[]): Promise<Story | null> {
 
   const articles = await Promise.all(
     group.map(async (member) => {
-      const article = await fetchArticleText(member.raw.url);
+      const cached = member.raw.fullText;
+      const fullText = cached ?? (await fetchArticleText(member.raw.url))?.fullText ?? member.raw.excerpt;
       return {
         source: member.raw.sourceName,
         url: member.raw.url,
         title: member.raw.title,
-        fullText: (article?.fullText ?? member.raw.excerpt).slice(0, 12000),
+        fullText: fullText.slice(0, 12000),
       };
     }),
   );

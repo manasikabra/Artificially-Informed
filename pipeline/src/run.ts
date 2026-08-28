@@ -5,7 +5,10 @@ import { clusterItems } from "./cluster.js";
 import { writeStory, type GroupMember } from "./write.js";
 import { assembleEdition, writeEdition } from "./assemble.js";
 import { loadSeenUrls, saveSeenUrls } from "./state.js";
+import { mapWithConcurrency } from "./concurrency.js";
 import type { Story } from "./types.js";
+
+const WRITE_CONCURRENCY = 5;
 
 function todayIST(): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
@@ -18,7 +21,9 @@ async function main() {
   }
 
   console.log("[run] fetching sources...");
+  console.time("[time] fetch");
   const rawItems = await fetchAllSources();
+  console.timeEnd("[time] fetch");
   console.log(`[run] fetched ${rawItems.length} raw items`);
 
   const seenUrls = loadSeenUrls();
@@ -31,32 +36,42 @@ async function main() {
   }
 
   console.log("[run] filtering...");
+  console.time("[time] filter");
   const filtered = await filterItems(newItems);
+  console.timeEnd("[time] filter");
   console.log(`[run] kept ${filtered.length} of ${newItems.length} items`);
 
   console.log("[run] clustering duplicate coverage...");
+  console.time("[time] cluster");
   const groups = await clusterItems(filtered);
+  console.timeEnd("[time] cluster");
   const multiSourceGroups = groups.filter((g) => g.length > 1).length;
   console.log(`[run] ${filtered.length} items -> ${groups.length} stories (${multiSourceGroups} merged from multiple sources)`);
 
   const rawByUrl = new Map(newItems.map((item) => [item.url, item]));
 
   console.log("[run] writing stories...");
-  const stories: Story[] = [];
-  for (const group of groups) {
-    const members: GroupMember[] = group
-      .map((filtered) => {
-        const raw = rawByUrl.get(filtered.url);
-        return raw ? { raw, filtered } : null;
-      })
-      .filter((m): m is GroupMember => m !== null);
-    if (members.length === 0) continue;
+  console.time("[time] write");
+  const groupMembers = groups
+    .map((group) =>
+      group
+        .map((filtered) => {
+          const raw = rawByUrl.get(filtered.url);
+          return raw ? { raw, filtered } : null;
+        })
+        .filter((m): m is GroupMember => m !== null),
+    )
+    .filter((members) => members.length > 0);
+
+  const written = await mapWithConcurrency(groupMembers, WRITE_CONCURRENCY, async (members) => {
     const story = await writeStory(members);
     if (story) {
-      stories.push(story);
       console.log(`  wrote: ${story.headline}${members.length > 1 ? ` (${members.length} sources)` : ""}`);
     }
-  }
+    return story;
+  });
+  const stories: Story[] = written.filter((s): s is Story => s !== null);
+  console.timeEnd("[time] write");
 
   // Mark every fetched item (kept or not) as seen so rejected items aren't re-evaluated tomorrow.
   for (const item of rawItems) seenUrls.add(item.url);

@@ -4,6 +4,9 @@ import { JSDOM } from "jsdom";
 import { Readability } from "@mozilla/readability";
 import { sources, type Source } from "./sources.js";
 import type { RawItem } from "./types.js";
+import { mapWithConcurrency } from "./concurrency.js";
+
+const SCRAPE_CONCURRENCY = 5;
 
 const REQUEST_TIMEOUT_MS = 15_000;
 
@@ -66,19 +69,19 @@ async function fetchScrape(source: Extract<Source, { type: "scrape" }>): Promise
       }
     });
 
-    const items: RawItem[] = [];
-    for (const url of Array.from(links).slice(0, source.maxItems)) {
+    const urls = Array.from(links).slice(0, source.maxItems);
+    return mapWithConcurrency(urls, SCRAPE_CONCURRENCY, async (url): Promise<RawItem> => {
       const article = await fetchArticleText(url);
-      items.push({
+      return {
         sourceId: source.id,
         sourceName: source.name,
         title: article?.title ?? url,
         url,
         publishedAt: null,
         excerpt: (article?.excerpt ?? "").slice(0, 600),
-      });
-    }
-    return items;
+        fullText: article?.fullText,
+      };
+    });
   } catch (err) {
     console.warn(`[fetch] scrape failed for ${source.id}: ${(err as Error).message}`);
     return [];

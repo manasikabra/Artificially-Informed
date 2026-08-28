@@ -5,10 +5,7 @@ export interface RawItem {
   url: string;
   publishedAt: string | null; // ISO string if known
   excerpt: string; // short text snippet used for the filter pass
-}
-
-export interface FullItem extends RawItem {
-  fullText: string; // extracted article body, used for the write pass
+  fullText?: string; // populated during fetch for scrape sources, reused by the write pass
 }
 
 export type Lens = "industry-usecases" | "l-and-d" | "ai-education" | "india-ecosystem";
