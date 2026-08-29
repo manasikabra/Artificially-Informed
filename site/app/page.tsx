@@ -12,7 +12,7 @@ export default function HomePage() {
   const [lead, ...others] = edition.stories;
   const rightStack = others.slice(0, 2);
   const row2 = others.slice(2, 5);
-  const remaining = others.slice(5);
+  const hasMore = edition.stories.length > 6;
 
   return (
     <div>
@@ -45,8 +45,6 @@ export default function HomePage() {
             gridTemplateColumns: `repeat(${row2.length}, 1fr)`,
             gap: 0,
             paddingBottom: 8,
-            borderBottom: remaining.length ? "1px solid var(--border)" : undefined,
-            marginBottom: remaining.length ? 32 : 0,
           }}
         >
           {row2.map((story, i) => (
@@ -57,20 +55,13 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Remaining stories */}
-      {remaining.length > 0 && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "0 32px" }}>
-          {remaining.map((story) => (
-            <StoryCard key={story.slug} story={story} />
-          ))}
+      {hasMore && (
+        <div style={{ textAlign: "center", marginTop: 24, paddingTop: 24, borderTop: "1px solid var(--border)" }}>
+          <Link href={`/edition/${edition.number}`} className="meta" style={{ textDecoration: "underline" }}>
+            {edition.stories.length - 6} more stories today — view full edition
+          </Link>
         </div>
       )}
-
-      <div style={{ textAlign: "center", marginTop: 24 }}>
-        <Link href={`/edition/${edition.number}`} className="meta" style={{ textDecoration: "underline" }}>
-          View full edition ({edition.stories.length} stories)
-        </Link>
-      </div>
     </div>
   );
 }

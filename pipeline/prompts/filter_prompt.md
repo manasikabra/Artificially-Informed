@@ -77,4 +77,6 @@ For every item you keep, provide:
 
 Prioritise signal over volume. It is better to keep 5 genuinely useful items than 20 mediocre ones.
 
+Target roughly 6-10 kept items on a typical day. This is a target, not a hard cap or a quota - a quiet day with only 2-3 genuinely useful items is fine, and a day with major news can run higher. But if considerably more than 10 items pass the "meaningfully relevant" bar, that is a signal your bar was too loose, not a signal to keep them all: go back and raise your bar - keep only the strongest, most substantive items until you're back near that range, ranked by how genuinely useful each one is to me.
+
 You will be given a JSON array of candidate items, each with an index, source, title, url, and excerpt. Call the `submit_filtered_items` tool with only the items worth keeping, referencing each by its `url`. Do not include items you are filtering out.
