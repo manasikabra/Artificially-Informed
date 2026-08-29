@@ -1,8 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type Theme = "light" | "dark";
+
+function getInitialTheme(): Theme {
+  if (typeof document === "undefined") return "dark";
+  const attr = document.documentElement.getAttribute("data-theme");
+  return attr === "light" ? "light" : "dark";
+}
 
 function applyTheme(theme: Theme) {
   document.documentElement.setAttribute("data-theme", theme);
@@ -10,13 +16,7 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme | null>(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    const initial = stored ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    setTheme(initial);
-  }, []);
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
@@ -28,19 +28,21 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label="Toggle dark mode"
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      suppressHydrationWarning
       style={{
-        background: "none",
+        background: "var(--bg-elevated)",
         border: "1px solid var(--border)",
         borderRadius: "999px",
-        width: 30,
-        height: 30,
+        width: 38,
+        height: 38,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         cursor: "pointer",
-        color: "var(--text-muted)",
-        fontSize: 14,
+        color: "var(--text)",
+        fontSize: 17,
+        lineHeight: 1,
       }}
     >
       {theme === "dark" ? "☀" : "☾"}
