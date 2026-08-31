@@ -1,0 +1,47 @@
+{
+  "number": 4,
+  "date": "2026-08-31",
+  "stories": [
+    {
+      "slug": "caterpillar-mining-to-ai-deployment",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 8,
+      "headline": "Caterpillar applies three decades of mining automation lessons to enterprise AI",
+      "dek": "The industrial company is spending $100 million over five years to retrain its workforce as AI moves from autonomous equipment to field tools and operations.",
+      "summary": "Caterpillar's AI deployment strategy is rooted in decades of operational experience integrating autonomous systems into mining. The company manages 1.6 million connected assets globally and has built 16 petabytes of structured operational data—a foundation it now leverages for broader AI applications. Its Cat AI Assistant lets field technicians use voice commands to access repair procedures and troubleshoot problems, drawing on proprietary machine data to guide real-time decisions. The company is also using AI to generate digital twins for manufacturing analysis and deploy AI agents to modernize legacy code and identify software defects.\n\nWhere Caterpillar sees the real challenge, though, is not building the technology but integrating it into customer workflows. Deploying an autonomous truck is one problem; transforming how people work alongside that system is another. The company draws on experienced operators to train AI systems, leveraging decades of institutional knowledge. As machines become more autonomous, operator roles are shifting from controlling single units to managing multiple machines from remote command centers—a transition that requires deliberate workforce development.\n\nThat reskilling need is substantial. Caterpillar employs 118,000 people and is committing $100 million over the next five years to training programs in AI, autonomy, and robotics. The investment reflects the company's recognition that AI adoption requires organizational change, not just technological capability. Meanwhile, AI infrastructure demand is already strengthening Caterpillar's business: its power-generation division—which supplies equipment for data centers—saw sales spike 72% to $3.10 billion in Q2 2026.",
+      "why_it_matters": "For an AI consultancy, this case demonstrates how domain expertise and operational data become competitive moats in AI deployment. Caterpillar's $100 million workforce investment over five years is a concrete signal that enterprise AI adoption requires not just model building but deliberate learning-and-development strategy. The company's shift from single-unit operation to multi-asset remote oversight mirrors organizational restructuring your clients will face when deploying AI systems at scale, making this relevant both as a teaching example and as a competitive positioning insight for consulting engagements.",
+      "potential_use": "Use Caterpillar's Cat AI Assistant workflow (voice commands to field procedures) as a workshop demo of practical enterprise AI—constrained scope, known data source, clear ROI. When pitching to industrial or manufacturing clients, Caterpillar's $100M retraining plan shows the budget line they should anticipate; frame L&D as infrastructure cost, not overhead. Document the operator-to-coordinator role transition as a case study on how AI reshapes organizational structure and staffing models.",
+      "sources": [
+        {
+          "title": "Caterpillar is bringing to AI deployment what it learned from automating mining",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/"
+        }
+      ]
+    },
+    {
+      "slug": "chatgpt-work-cloud-features-explained",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "ChatGPT Work adds code execution, browser automation, and persistent storage to OpenAI's agent platform",
+      "dek": "The cloud version can run open-internet Python scripts, control a headless Chrome browser, and share files across sessions—capabilities absent from regular Chat.",
+      "summary": "OpenAI released ChatGPT Work in July 2026 as a distinct product from regular Chat, though the two are often conflated. The cloud version (Work Cloud, accessed via chatgpt.com or mobile apps) differs significantly from the desktop variant. Work Cloud is reserved for paid subscribers ($20/month and up) and includes several capabilities Chat lacks: code execution with full internet access (not sandboxed), a headless Chrome browser that can fill forms and run JavaScript, and persistent storage across sessions so files created in one conversation remain accessible in others.\n\nThe model selection differs between the two products. Work offers GPT-5.6 Sol, Luna, and Terra at various reasoning levels, plus older GPT-5.5 versions—mirroring the OpenAI API lineup. Chat, by contrast, uses different branding (Instant, Medium, High) and restricts higher tiers to $100/month subscribers. Work also enables advanced features like multi-agent sessions, scheduled prompt automations, and the ability to build and deploy entire websites using Cloudflare Workers with database and file storage.\n\nSimon Willison's hands-on testing revealed Work can execute Python scripts that clone GitHub repositories and fetch from arbitrary APIs, run a full browser instance capable of handling login flows and 2FA without exposing credentials to the model, and maintain persistent scratch directories mounted across all active Work sessions. The platform includes 44 skills (specialized tool sets) covering document creation, image generation, PDF handling, spreadsheets, and data dashboards—far more integrated capability than Chat exposes.",
+      "why_it_matters": "For AI practitioners building enterprise tools, Work demonstrates how OpenAI structures multi-capability agent systems and the design choices around capability isolation between product tiers. The internet-accessible code execution and browser automation are meaningful escalations from sandboxed environments; this shifts what's operationally feasible in agentic workflows. For workshop teaching, Work's explicit skill architecture and tool categories offer a concrete case study in how production AI agents organize their capabilities. The persistent filesystem and multi-agent coordination features show how OpenAI is solving stateful, multi-turn workflows—a pattern increasingly central to practical AI deployments.",
+      "potential_use": "In workshops, use Work's 223-tool registry and 44 skills as a teaching reference for agent API design—how to surface capabilities to models without overwhelming them. For consulting, the browser automation + persistent storage combination unlocks new classes of business-process automation (form-filling workflows, recurring data collection) worth scoping as client opportunities. Document the capability gap between Chat and Work as a template for how to tier AI products by safety surface and operational complexity.",
+      "sources": [
+        {
+          "title": "Understanding ChatGPT Work",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/"
+        }
+      ]
+    }
+  ]
+}
