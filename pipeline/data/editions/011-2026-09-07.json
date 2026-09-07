@@ -1,0 +1,46 @@
+{
+  "number": 11,
+  "date": "2026-09-07",
+  "stories": [
+    {
+      "slug": "openai-coding-agents-research",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "OpenAI shares internal data on how coding agents accelerate research",
+      "dek": "Early metrics show agents reshaping research workflows inside OpenAI, with measurable gains in experiment velocity and task complexity.",
+      "summary": "OpenAI has published data on how coding agents are being deployed within its own research teams to speed up and reshape the research process. The report measures concrete signals: agent usage patterns, how quickly experiments can cycle, the complexity of tasks agents handle, and the overall acceleration in research output.\n\nThe insight is grounded in live internal usage rather than theoretical posture. OpenAI is documenting what happens when agents become embedded in knowledge work—how they change the pace and scope of what researchers can attempt in a given timeframe, and what kinds of work get delegated to them.",
+      "why_it_matters": "This gives you a rare window into agent-native workflows at scale within a leading AI lab. It moves beyond abstract claims about agent capability into measurable impact on research productivity—directly useful for understanding how your own clients can integrate coding agents into complex work, and a concrete case study for teaching practical AI automation in knowledge-intensive domains.",
+      "potential_use": "Use this as a primary case study in workshops on AI agents and research automation, or as source material when advising clients on where to pilot agent-based workflows. The internal metrics (experiment velocity, task complexity) offer a template for how to instrument agent adoption within your own consulting engagements.",
+      "sources": [
+        {
+          "title": "Research acceleration: The view inside OpenAI",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/research-acceleration-view-inside-openai"
+        }
+      ]
+    },
+    {
+      "slug": "openai-pachocki-alignment-safeguards",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 6,
+      "headline": "OpenAI Chief Scientist: Stronger Safeguards and International Coordination Needed as AI Grows More Capable",
+      "dek": "Jakub Pachocki argues that the challenge of aligning advanced AI systems with human intent requires coordinated global governance, not isolated safety efforts.",
+      "summary": "Jakub Pachocki, OpenAI's chief scientist, has published a reflection on the implications of increasingly capable AI systems, focusing on the alignment problem—ensuring that more powerful models behave in accordance with human values and intentions. Pachocki frames the challenge not as a solved problem but as a central concern that intensifies as AI capabilities scale.\n\nHis argument centers on two gaps. First, stronger safeguards are needed within organizations building advanced systems, beyond current practices. Second, alignment cannot be a purely domestic concern; he calls for international coordination to prevent a race to the bottom where companies or countries deploy powerful systems without adequate safety measures.\n\nPachocki's framing treats AI alignment as a governance and coordination problem, not merely a technical one. The piece signals OpenAI's strategic position on the need for systemic oversight as capabilities advance, and reflects growing recognition in the field that technical safety work alone is insufficient without institutional and geopolitical alignment.",
+      "why_it_matters": "For an AI consultant advising clients on responsible deployment, this perspective from a leading lab's research leadership clarifies the alignment-versus-capability tension and the governance infrastructure your clients should expect and plan for. It also provides evidence for why your workshop participants need to understand not just what models can do, but the explicit trade-offs and safeguards that limit how they're used. The call for international coordination signals that India's AI ecosystem will increasingly be shaped by global alignment standards and governance frameworks.",
+      "potential_use": "Use Pachocki's framing in client conversations about risk mitigation and responsible AI deployment—his argument that safeguards and coordination are prerequisites, not afterthoughts, makes a strong case for upfront governance in AI projects. In workshops, this provides a concrete example of how leading research organizations think about capability-safety trade-offs, grounding discussion of where practitioners sit in that landscape.",
+      "sources": [
+        {
+          "title": "An Alien Mind",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/an-alien-mind"
+        }
+      ]
+    }
+  ]
+}
