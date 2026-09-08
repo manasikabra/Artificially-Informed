@@ -1,0 +1,26 @@
+{
+  "number": 12,
+  "date": "2026-09-08",
+  "stories": [
+    {
+      "slug": "google-tpu-inference-economics-beat-nvidia",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Google's TPU Ironwood delivers 50% better inference cost than NVIDIA's Blackwell",
+      "dek": "Third-party benchmarks show TPUv7 competitive on price across most latency targets, with native PyTorch support landing later this year.",
+      "summary": "Google is rolling out InferenceX, a program to externalize TPU inference workloads beyond its internal operations. SemiAnalysis published the first independent benchmarks of TPUv7 Ironwood against NVIDIA's B200 and B300 GPUs, showing TPU achieving up to 50% lower cost per token in aggregated serving with FP8 precision. At 100 tokens/second per user, TPU costs $0.181 per million tokens versus $0.222 for B200 and $0.276 for B300. The economics improve further at higher concurrency levels, though with latency trade-offs—a critical consideration for production workloads.\n\nThe externalization rests on a software shift. Google is moving from TorchAX (a PyTorch-to-JAX translation layer) to TorchTPU, which treats TPUs as native PyTorch devices. This approach lets inference engines like vLLM and SGLang run unmodified PyTorch models directly on TPU hardware, with low-level optimization handled by XLA, StableHLO, and TPU-specific Pallas kernels. The stack is expected to exit private beta and open-source around October 2025.\n\nSeveral optimizations remain in development. Disaggregated serving and speculative decoding are not yet fully optimized on external TPUs—areas where NVIDIA's Blackwell Ultra currently holds advantages. Once those land, SemiAnalysis expects TPU's price advantage to extend across the full performance-latency curve. The roadmap also includes support for agentic workloads and ultra-wide tensor parallelism on TPU pods scaling to 1,000+ chips.",
+      "why_it_matters": "For your consulting practice, this matters because infrastructure economics now drive infrastructure choices as much as raw capability does. A 50% cost advantage in inference is not marginal—it shifts the calculus for clients evaluating multi-year serving costs. For your workshops, TPU externalization is a concrete teaching case: it shows how software layering (PyTorch→TorchTPU→XLA→Pallas kernels) unlocks vendor optionality, and it illustrates the gap between theoretical FLOPS and real-world cost-per-token. For India's AI ecosystem, TPU availability through GCP's regional footprint creates an alternative to NVIDIA's supply constraints, particularly relevant for cost-sensitive deployments and training at scale.",
+      "potential_use": "In workshops: walk through the TorchTPU software stack and benchmark real models (Qwen3.5 397B) to show students how backend swaps affect cost and latency trade-offs. For consulting: use these benchmarks to build ROI models for clients considering multi-accelerator deployments—TPUs work best for high-concurrency, latency-tolerant workloads, while NVIDIA suits low-latency, bursty traffic. Flag the October 2025 TorchTPU release date as a pivot point for clients with inference roadmaps extending into 2026.",
+      "sources": [
+        {
+          "title": "TPU Inference Externalization Full Steam Ahead - InferenceX",
+          "publisher": "SemiAnalysis",
+          "url": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam"
+        }
+      ]
+    }
+  ]
+}
