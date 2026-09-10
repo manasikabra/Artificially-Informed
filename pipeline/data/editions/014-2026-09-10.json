@@ -1,0 +1,90 @@
+{
+  "number": 14,
+  "date": "2026-09-10",
+  "stories": [
+    {
+      "slug": "robot-inference-on-device-vs-datacenter",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Why robot brains split between edge and datacenter",
+      "dek": "Robotics inverts the LLM playbook: hardware constraints force smaller models and hybrid compute architectures that LLM builders never faced.",
+      "summary": "LLMs and robots face opposite constraints. With LLMs, the model comes first and infrastructure scales to fit it—no hard latency requirement, unlimited spending. Robotics flips the equation: the hardware is fixed upfront (costly to replicate across millions of units), and the model must fit the hardware.\n\nTwo hard limits define this reversal. Latency is absolute—a robot's control loop can't miss a deadline or the world changes before its action lands. Cost is existential—manufacturers pay for compute on every robot unit, meaning billions spent on hardware and factories, not training clusters. Frontier robot models today max out around 5–14 billion parameters (Physical Intelligence's π0.7, NVIDIA's DreamZero) because of these constraints, an order of magnitude smaller than frontier LLMs.\n\nThe answer is hierarchical inference: a split brain. The planning layer—large, slow, and doing high-level reasoning—runs in a datacenter on H100s or GB200s, updating a few times per second asynchronously. The action layer—small, fast, running at hundreds of Hz—stays on-robot for low-level motor control and safety. This decoupling lets the planning layer absorb network latency and jitter while keeping real-time control local. Specialist robots handling narrow, repetitive tasks can run entirely on-device; generalist robots tackling open-ended work need datacenter-scale compute for the planning component.\n\nThe infrastructure challenge is acute: raw bandwidth and uplink capacity dominate, not just latency. Robots stream high-fidelity sensor data (images compressed in real time) upstream constantly, not in bursts like LLMs. The imaging pipeline itself must be optimized for model input quality and compression efficiency, not human aesthetics—and adapted dynamically as network conditions shift.",
+      "why_it_matters": "This is a core architectural pattern for agentic AI and physical systems: how and where reasoning actually runs shapes what kind of agent you can build. Unlike centralized LLM services, robotics forces a decision tree on every deployment—onboard vs hybrid vs cloud—based on generality, latency budget, and unit economics. Understanding this tradeoff is essential for consulting on AI system design and for teaching how infrastructure constraints drive model and application design choices.",
+      "potential_use": "Use as a framework workshop module on AI deployment architecture: compare LLM vs robotics inference patterns, then apply the constraint analysis to other edge+cloud scenarios (autonomous vehicles, factory floor AI, embedded agents). For Applicative AI: fieldwork case study on hierarchical model splitting and real-time inference budgeting when latency and cost both matter.",
+      "sources": [
+        {
+          "title": "Where Does a Robot Think – On-Device vs Datacenter Inference",
+          "publisher": "SemiAnalysis",
+          "url": "https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device"
+        }
+      ]
+    },
+    {
+      "slug": "gpt-6-astra-openai-business-model",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "OpenAI releases GPT-6 Astra, its most capable business model yet",
+      "dek": "The new model adds advanced reasoning and computer use capabilities designed to automate complex workflows for enterprises.",
+      "summary": "OpenAI has released GPT-6 Astra, positioning it as the company's most capable model for business applications. The model introduces three core capabilities: advanced reasoning for complex problem-solving, computer use enabling the model to interact directly with applications and systems, and stronger judgment in writing and design tasks.\n\nThe computer-use feature marks a significant shift in what models can do operationally. Rather than just generating text or analysis, GPT-6 Astra can navigate software interfaces, execute commands, and automate multi-step tasks—moving closer to autonomous workflow automation.\n\nThese capabilities directly expand the surface area of what becomes automatable in real business contexts. The combination of improved reasoning and the ability to act on systems suggests new categories of work can now be handed to AI systems, though practical effectiveness will depend on how well the model performs on specific enterprise workflows.",
+      "why_it_matters": "For your consulting work, GPT-6 Astra's computer-use capability is the material change—it shifts the conversation from AI-assisted analysis to AI-driven automation of multi-step processes. Understanding what these capabilities actually enable in practice is critical for scoping realistic engagements and identifying which client workflows are now viable candidates for automation. For your workshops, this model represents the current frontier of what you should be teaching practitioners to expect and build for.",
+      "potential_use": "Run a hands-on workshop session exploring GPT-6 Astra's computer-use capabilities against a representative business workflow (e.g., expense report processing, data extraction from documents, multi-app task orchestration)—useful for both teaching practitioners what's newly possible and identifying concrete automation angles for Applicative AI client work.",
+      "sources": [
+        {
+          "title": "GPT-6 Astra: The next generation in intelligence for work",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/gpt-6-astra-next-generation-work"
+        }
+      ]
+    },
+    {
+      "slug": "ibm-granite-time-series-sota-model",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "IBM releases Granite PatchTST-FM-r2, a top-ranked time-series forecasting model under commercial license",
+      "dek": "The ~385M-parameter model ranks first among permissively licensed zero-shot forecasters on GIFT-Eval and handles context lengths up to 8,192 steps.",
+      "summary": "IBM has released Granite Time Series PatchTST-FM-r2, an updated foundation model for time series forecasting that achieves competitive performance on benchmark evaluations while remaining available under commercial-friendly open licenses (Apache 2.0 and OpenMDW 1.0). As of September 2026, the model ranks top among permissively licensed, replicable zero-shot models on the GIFT-Eval benchmark—ranking #2 overall in that category—and remains competitive even against larger pretrained models that were exposed to benchmark data during training.\n\nThe architecture combines conformer blocks (pairing multi-head self-attention with temporal convolution) to capture both long-range and local temporal dependencies. This design choice departs from the previous PatchTST-FM-r1 by delegating short-term relationships to convolution layers, allowing attention mechanisms to focus on longer-horizon patterns. The model supports probabilistic forecasting through 99-quantile prediction heads, flexible forecast lengths, and imputation of missing values. At approximately 385M parameters with context windows of up to 8,192 steps, it handles demand forecasting, energy loads, sensor telemetry, traffic, pricing, and other regularly sampled time series without task-specific fine-tuning.\n\nThe training corpus is fully documented—drawn from GIFT-Eval pretraining datasets, synthetic data generated via KernelSynth, augmented mixup sequences outside the evaluation set, and approximately 500,000 synthetic sequences—reducing ambiguity around data leakage and supporting organizations' governance reviews. All model weights, inference code, and benchmark-reproduction scripts are publicly available. The release also extends to production streaming contexts through an early-access integration with Confluent Cloud, enabling continuous forecasting and anomaly detection from live data streams via Apache Flink.",
+      "why_it_matters": "For consultants and practitioners building forecasting systems, this release demonstrates how permissively licensed foundation models can deliver state-of-the-art performance without restrictive licensing friction—a key differentiator for client deployments. The documented training corpus and transparent architecture set a precedent for enterprise adoption and model governance that directly impacts decision-making during implementation. The zero-shot capability and streaming integration expand the palette of practical use cases: organizations can prototype forecasts immediately on their own time series without retraining, and feed results into live operational systems rather than batch pipelines.",
+      "potential_use": "Use PatchTST-FM-r2 as a workshop demo for forecasting fundamentals: walk clients through a simple Python pipeline loading their own demand or sensor data and comparing zero-shot forecasts to naive baselines, highlighting the efficiency gain over bespoke model development. For Applicative AI engagements, position time-series foundation models as a strategic building block in predictive analytics architectures—particularly where clients maintain diverse forecasting use cases (demand, energy, inventory, pricing) that would normally require separate models and maintenance overhead. Internally, this release validates an emerging pattern: commercial-friendly open licensing and transparent training practices are becoming competitive advantages in enterprise AI adoption, a dynamic worth tracking across India's growing AI infrastructure and startup ecosystem.",
+      "sources": [
+        {
+          "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+          "publisher": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series"
+        }
+      ]
+    },
+    {
+      "slug": "ai-spend-per-employee-declines-august",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Top firms cut AI spend per employee nearly 10% in August as token prices drop",
+      "dek": "Ramp's spending data across 70,000 companies reveals enterprises are shifting to cheaper models even as overall adoption slows slightly.",
+      "summary": "Ramp, a payments company with visibility into 70,000 firms, reported that AI spending per employee at the top 1% of AI-using companies fell nearly 10% to $7,205 in August. The decline reflects both seasonal vacation slowdowns and a structural shift: average token costs have plummeted to $0.68 per million tokens from a peak of $1.15 in March as OpenAI and Anthropic cut prices aggressively.\n\nOverall adoption growth also stalled—just 56% of Ramp customers paid for AI products in August, up only 0.4% from July. This marks the second year Ramp has observed slowdowns during summer months, though the pattern typically reverses as the year progresses. The U.S. Census Bureau's broader survey suggests Ramp's tech-heavy customer base overrepresents actual AI adoption; only 22% of all U.S. businesses report using AI.\n\nCrucially, enterprises are voting with their wallets toward older, cheaper models. Rather than upgrading to frontier labs' latest releases, teams are sticking with earlier versions like OpenAI's ChatGPT 5.6-Terra and Anthropic's Sonnet. Meanwhile, adoption of open-weight models and inference platforms remains marginal at 6.4% of AI-spending businesses—growing but not fast enough to reshape the market.\n\nThe data puts pressure on the business case for hyperscalers' massive AI infrastructure investments. Frontier labs have historically recouped training costs in the first weeks after a model launch, but slower adoption and price competition threaten that dynamic. For model builders relying on volume growth to justify chip spending, the signal is a cautionary one.",
+      "why_it_matters": "This real spending data contradicts the narrative that AI adoption is accelerating uniformly. For Applicative AI's advisory work, it matters that enterprises are optimizing for cost over capability—they're choosing proven, cheaper tools over bleeding-edge models. For your education angle, this reveals how actual business decisions diverge from hype: the market is maturing toward practical efficiency rather than racing upmarket. And for tracking India's AI adoption trajectory, this August slowdown in enterprise spending globally suggests any uptick in Indian business adoption will likely follow similar patterns of cost-consciousness and model consolidation.",
+      "potential_use": "Use this data in client conversations around total cost of ownership and model selection strategy—it's concrete evidence that \"just using the latest model\" isn't the default enterprise move anymore. In workshops, contrast the hype around frontier model releases with Ramp's spending trends to anchor discussions about real adoption barriers and ROI. For India focus: monitor whether Indian enterprises follow the same pattern of gravitating to cheaper, proven models versus the West, or if they leapfrog straight to cost-optimized approaches.",
+      "sources": [
+        {
+          "title": "AI spend per employee slumped at top firms in August — summer doldrums or a warning sign?",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/09/09/ai-spend-per-employee-slumped-at-top-firms-in-august-summer-doldrums-or-a-warning-sign/"
+        }
+      ]
+    }
+  ]
+}
