@@ -1,0 +1,28 @@
+{
+  "number": 17,
+  "date": "2026-09-13",
+  "stories": [
+    {
+      "slug": "gpt-6-astra-running-route-generation",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "GPT-6 Astra generates mapped running routes from an address in 27 minutes",
+      "dek": "The model chained external geolocation and mapping APIs, then visualized results as both embedded HTML and downloadable GPX/GeoJSON files.",
+      "summary": "Simon Willison used ChatGPT Work with GPT-6 Astra (Max) to generate 5K and 10K running routes from his home address, looping back to the start. The model completed the task in 27 minutes, producing both an interactive embedded visualization and downloadable route files in GPX and GeoJSON formats. When asked to explain its approach, it described chaining Nominatim for address lookup and Overpass for fetching OpenStreetMap road data, then calculating the loops locally. The visualization used a \"visualize skill\" to create an HTML file containing the full route geometry encoded as JSON, which rendered interactively using D3.js.\n\nThe demonstration reveals both capability and constraint. The model successfully decomposed a multi-step problem—geocoding an address, querying open geospatial data, computing loops, and producing multiple output formats—without explicit user guidance on tooling or methods. However, Willison noted a critical transparency gap: the actual Python code the model executed remained invisible in the ChatGPT UI. When he later asked for the code, the model could not retrieve it, claiming the thread had been \"compacted\" and the original context lost. This points to a workflow friction in agent-based systems where intermediate work is not preserved or made queryable after conversation optimization.",
+      "why_it_matters": "For your consultancy and teaching: this shows a real-world AI workflow where an LLM coordinates multiple APIs and outputs to solve a concrete, multi-step problem—the kind your clients and workshop participants are trying to build. It's a live example of agentic decomposition in action. For your own expertise building: it surfaces a key production concern—auditability and reproducibility of agent work—that matters when helping organizations deploy these systems responsibly.",
+      "potential_use": "Use this as a live workshop demo to show how modern models handle multi-tool workflows and output formatting. Also highlight the transparency limitation as a teaching point: when advising clients on AI systems, ask how execution traces and intermediate results will be logged and audited. Consider it a case study in the gap between \"the model did what I asked\" and \"I can verify what the model did.\"",
+      "sources": [
+        {
+          "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/12/astra-running-routes/"
+        }
+      ]
+    }
+  ]
+}
