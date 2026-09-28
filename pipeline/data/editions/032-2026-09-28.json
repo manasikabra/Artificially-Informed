@@ -1,0 +1,47 @@
+{
+  "number": 32,
+  "date": "2026-09-28",
+  "stories": [
+    {
+      "slug": "2026-llm-retrospective-coding-agents",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Coding agents went from flaky to reliable in 2026—and reshaped software development",
+      "dek": "November's Claude 4.5 and GPT-5.1 crossed a threshold that triggered waves of innovation, security debates, and consumer enthusiasm.",
+      "summary": "Simon Willison's retrospective of 2026 marks a clear inflection point: Claude 4.5 and GPT-5.1, released in November 2025, paired with mature coding agent harnesses, shifted from producing unreliable code to generating work engineers could deploy daily. This single advance unlocked waves of downstream developments. By January, the open-source OpenClaw project sparked a consumer movement—people in China queued around blocks for installation help, and Apple retail stores in the Bay Area ran out of Mac Minis as users bought them as \"aquariums\" to run personal agents. The technology also prompted a structural rethink of software engineering. StrongDM, a security company, operationalized two radical rules by mid-2026: code must not be written by humans, and code must not be reviewed by humans. Instead, verification shifted to testing automated agent output against specifications and security constraints. Meanwhile, the economics shifted sharply. Token spending exploded from a $50 ceiling (when agents lacked real tasks) to $1,000-per-day workloads by spring, driving Anthropic's valuation skyward and triggering a brief \"tokenmaxxing\" backlash when Meta, Microsoft, and Uber initially mandated AI adoption then capped costs. Meta's consumer product Muse launched in September and topped iPhone App Store free charts, suggesting personal agents are becoming mainstream consumer software.",
+      "why_it_matters": "For your consulting and workshop practice, this tracks the precise moment coding agents transitioned from research curiosity to production tool and consumer product—a shift that changes how you advise clients on AI integration, team structure, and code quality processes. The move from human code review to agent-output verification is no longer theoretical; firms are experimenting with it now, creating both opportunity and liability questions worth exploring in client engagements. India's AI ecosystem will likely follow similar adoption curves; understanding where coding agents sit in capability maturity helps you position technical capacity-building around the skill gaps that matter.",
+      "potential_use": "Use this timeline as scaffolding for a workshop on the evolution of AI tooling—move participants through the November inflection, the January OpenClaw surge, and StrongDM's rule-based approach to illustrate how capability breakthroughs cascade into operational change. In consulting, the StrongDM model (code must route through agents, verification through testing not review) offers a concrete client engagement angle: help teams design testing and security frameworks for agent-generated code, filling the gap between \"we're using agents\" and \"we're confident in what they produce.\"",
+      "sources": [
+        {
+          "title": "2026 in LLMs (so far)",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/"
+        }
+      ]
+    },
+    {
+      "slug": "muse-agent-real-world-mistakes",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Meta's Muse AI agent learns from customer service failures",
+      "dek": "The agent reported a missed pickup, false auto-reply, and offered to change its own behavior—surfacing real tensions in autonomous decision-making.",
+      "summary": "Meta's Muse AI agent handled a package pickup gone wrong by composing a message to its human operator that reads like a genuine incident report. A user scheduled a pickup with a delivery driver named Usman, but wasn't available when he arrived at 9:15. Muse had sent an auto-reply at 9:27 claiming the user was home, despite no verification. When Usman left at 9:38 without the package and left negative feedback, Muse acknowledged the failure directly: it owned the false auto-reply, apologized to the driver on the user's behalf, and asked whether to disable similar claims in future interactions.\n\nThe exchange reveals how an AI agent can not just execute tasks but reflect on the consequences of its own actions and propose policy corrections. Rather than hiding the error or reframing it, Muse presented facts, assigned responsibility (including to itself), and asked the operator whether to change behavior.",
+      "why_it_matters": "For your consultancy and workshops, Muse demonstrates a maturity in agent design that moves beyond task automation into accountability and self-correction. The agent's transparent reporting of its own mistakes—and its offer to modify its own rules—surfaces a practical question your clients will face: how do you structure agent autonomy so it can learn from failures without either shirking responsibility or becoming paralyzed by defensive behavior. This is directly relevant to building trustworthy AI systems in customer-facing environments.",
+      "potential_use": "Use this as a workshop case study on agent design patterns: how should agents report failures to operators, and at what point should an agent be empowered to modify its own decision rules. Also valuable for exploring the gap between \"agents that follow instructions\" and \"agents that improve their own instructions based on feedback\"—a key architectural question for building production AI workflows.",
+      "sources": [
+        {
+          "title": "Quoting Muse AI Agent",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/"
+        }
+      ]
+    }
+  ]
+}
