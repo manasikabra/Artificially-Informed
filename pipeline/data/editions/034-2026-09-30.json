@@ -1,0 +1,132 @@
+{
+  "number": 34,
+  "date": "2026-09-30",
+  "stories": [
+    {
+      "slug": "sarvam-ai-agent-building-guide",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 9,
+      "headline": "Sarvam AI publishes first-principles guide to building AI agents",
+      "dek": "The Indian AI company breaks down agent architecture as a language model in a loop with tools, using a concrete e-commerce support bot example throughout.",
+      "summary": "Sarvam AI released a 25-minute technical guide that treats agent design as a sequence of decisions about what text the model sees and when. The guide defines an agent as a language model repeatedly reading a context window, calling tools, observing results, and deciding its next step—nothing more. The core mental model: everything an agent \"knows\" (skills, memory, domain rules, customer history) is simply text placed in the context window before each turn.\n\nThe guide uses ShopBot, a support agent for a fictional online grocery store, as a running example throughout. ShopBot can look up orders, check refund rules, and process refunds up to a limit—a task that illustrates why agents differ from chatbots. Unlike a chatbot that only generates text, an agent decides what to do, takes action through tools, and keeps looping until the task is done.\n\nThe guide covers system prompts, tool design, and when to build multiple specialized agents versus one combined system. A key principle: the context window is the bottleneck. Every token costs money and attention; poorly designed prompts that repeat on every loop or try to do too much in one agent become expensive and error-prone. The best agents load only what they need, when they need it, and delegate jobs that don't share tools or behavior rules to separate agents with narrower scopes.",
+      "why_it_matters": "For your consulting and teaching work, this guide offers a teachable mental model (agents as text-in-context loops) and a repeatable framework (goal, tools, instructions, stop condition) that clients and workshop participants can use to evaluate and build their own agents. The e-commerce example is grounded enough to adapt to other domains, and the guide explicitly addresses cost and safety design patterns—two concerns your clients will raise. As content from an Indian AI company, it reflects how local expertise is now producing substantive, exportable technical knowledge rather than just adopting frameworks from abroad.",
+      "potential_use": "Use the ShopBot example as a template for a hands-on agent workshop: have participants design their own agent in their domain by filling in the four core fields (goal, tools, instructions, stop condition), then discuss why adding unrelated tools increases failure modes. The guide's section on system prompts—particularly the bad-prompt-versus-good-prompt comparison—is directly usable in training. For your Applicative AI consulting, the cost analysis (why splitting agents into specialists keeps windows small) is a concrete selling point when clients ask \"why not one agent that does everything?\"",
+      "sources": [
+        {
+          "title": "Building AI Agents: A First-Principles Guide",
+          "publisher": "Sarvam AI Blog",
+          "url": "https://www.sarvam.ai/blogs/building-ai-agents"
+        }
+      ]
+    },
+    {
+      "slug": "openai-gpt-6-1-sol-launch",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 8,
+      "headline": "OpenAI launches GPT-6.1 Sol with Astra-class performance at one-fifth the cost",
+      "dek": "The new model targets coding, computer interaction, and business workflows while cutting token prices dramatically compared to the flagship Astra model.",
+      "summary": "OpenAI has released GPT-6.1 Sol, a model engineered to deliver near-parity with Astra (the company's flagship model) on core capabilities while charging one-fifth of Astra's standard input and output token rates. The model is optimized for three primary use cases: software development tasks, computer use automation, and professional work including document processing and complex business workflows.\n\nThe pricing gap matters for real-world deployment. Teams building applications that rely on repeated API calls—whether for code generation, automated system interaction, or document analysis—face vastly different economics depending on which model they choose. Sol closes much of the capability gap while keeping costs proportional to lighter use cases, making it a direct case study in the tradeoff between maximum performance and operational efficiency.",
+      "why_it_matters": "For your consultancy, this is concrete new data on the capability-to-cost curve shaping enterprise AI decisions. You can now advise clients on model selection with a real alternative that doesn't force the choice between Astra's maximum capabilities and cheaper older models. For workshops, this becomes a teaching moment about how model economics drive architecture decisions and total cost of ownership in production systems.",
+      "potential_use": "Use Sol as a live case study in your workshops: walk through the decision tree a team should follow when selecting between models (capability needs, volume of tokens, budget constraints, and latency tolerance). Or build a consulting framework around model selection that incorporates Sol alongside competitor offerings—a practical tool for helping clients right-size their AI infrastructure without overpaying for unused capability.",
+      "sources": [
+        {
+          "title": "Introducing GPT-6.1 Sol",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/introducing-gpt-6-1-sol"
+        }
+      ]
+    },
+    {
+      "slug": "openai-launches-dots-proactive-agents",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 8,
+      "headline": "OpenAI launches Dots, proactive AI assistants for autonomous project work",
+      "dek": "Dots work continuously on complex tasks in the background while users retain control over their operations and pace.",
+      "summary": "OpenAI has introduced Dots, a new category of AI assistant designed to operate proactively on extended projects and routine tasks without constant human direction. Unlike chat-based models that respond to individual queries, Dots function as autonomous agents capable of working across complex workflows, handling multiple steps, and maintaining progress over time.\n\nThe system is built around a control model where users set parameters and oversight rules—users remain in charge of what Dots can do, how it proceeds, and when to step in. This reflects a deliberate design choice to address a core concern in agentic AI: how to deploy autonomous systems without losing visibility or governance.\n\nThe rollout signals OpenAI's pivot toward agent-based work patterns rather than conversational interfaces. Dots are positioned for both business automation and personal productivity use cases, suggesting the company sees a market opportunity in background-working assistants that handle the execution layer while humans focus on direction and decision-making.",
+      "why_it_matters": "For practitioners building AI solutions, Dots demonstrates a concrete implementation of agentic AI in production—moving beyond prototype to a consumer-facing product. This is instructive for understanding how to balance autonomy with human oversight, a recurring design question in your consulting practice. For your workshops, Dots exemplifies the shift from query-response to continuous-execution models, and serves as a case study in how product teams operationalize agent frameworks at scale.",
+      "potential_use": "Incorporate Dots into your agent-design workshop as a real-world reference for control mechanisms and user trust in autonomous systems. For Applicative AI's service offerings, Dots' architecture—continuous background execution with human override points—is a blueprint for client conversations about deploying agents in enterprise workflows. This also positions you to advise clients on what agent capabilities to build in-house versus adopt from platforms.",
+      "sources": [
+        {
+          "title": "Introducing dots",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/introducing-dots"
+        }
+      ]
+    },
+    {
+      "slug": "openai-codex-persistent-cloud-environments",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "OpenAI upgrades Codex with persistent cloud environments and voice controls",
+      "dek": "The software engineering agent now supports reusable development workspaces across devices, automated code review, and continuous repository scanning.",
+      "summary": "OpenAI announced a suite of updates to Codex at its DevDay this week, moving the software engineering agent beyond isolated, ephemeral cloud tasks. The centerpiece is persistent, configurable cloud development environments that developers can access from any device—laptop, phone, or cloud—with shared settings and permissions for teams. This shifts from Codex's previous model of spinning up discrete remote tasks.\n\nThe CLI got a refresh too, including voice control for starting and directing tasks, an /agents view for managing multiple concurrent work streams, and UI improvements for readability during extended sessions. A new code review experience lets Codex operate within ChatGPT's desktop app, generating summaries of pull request changes and offering analysis before feedback is shared to GitHub or GitLab. The tool also performs asynchronous reviews while developers are offline.\n\nOn the security front, OpenAI rolled out Codex Security Cloud, a toolset that scans GitHub repositories on demand or on a schedule, automatically investigates findings, deduplicates them, and prepares fixes—all without requiring developer presence. The tool integrates OpenAI's Daybreak Blue cybersecurity models directly, bypassing separate application workflows. OpenAI also released updates to its Agents API (now supporting computer use) and a new Decisions API for real-time decision-making, plus support for building OpenAI agents natively on AWS via Amazon's Bedrock.",
+      "why_it_matters": "For your AI consultancy, this demonstrates how AI agents are maturing in knowledge-work automation beyond single-use prompting—persistent state, async operation, and integration across tools signal production-grade deployment patterns. For workshop design, the voice-controlled interface and asynchronous code review offer concrete pedagogical material: students can see how natural language interfaces and agent autonomy address real friction points in developer workflows. Understanding Codex's architecture also clarifies the difference between agent prototyping (ChatGPT) and infrastructure-grade agentic systems (reusable environments, API stability), a distinction worth teaching.",
+      "potential_use": "Build a workshop demo using Codex's voice CLI and asynchronous code review to show how agent autonomy reduces context-switching friction—compare it to traditional CI/CD or manual review workflows. Use this as a case study in your consultancy practice for clients skeptical about where AI agents add real value versus hype: the persistence, team-level sharing, and offline operation address genuine enterprise pain points, not toy use cases.",
+      "sources": [
+        {
+          "title": "OpenAI gives Codex reusable cloud environments that work across devices",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/"
+        }
+      ]
+    },
+    {
+      "slug": "provenance-guard-mcp-agent-verification",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "ProvenanceGuard verifies MCP agents check the right source, not just any source",
+      "dek": "A verification layer catches when tool-using agents cite facts correctly but attribute them to the wrong tool output or data source.",
+      "summary": "When LLM agents use multiple tools through the Model Context Protocol, they pull facts from searches, databases, patient records, and documents—then weave them into a single answer. Standard factuality checkers ask only whether a claim appears somewhere in the pooled evidence. ProvenanceGuard, developed by Multiverse Computing, adds a source-awareness layer: it verifies not just that a fact is true, but that the agent attributes it to the correct source.\n\nThe problem it solves is \"cross-source conflation\"—a real fact being attributed to the wrong tool. A customer support agent might correctly state a refund window exists, but wrongly attribute it to an account record instead of policy documentation. A clinical agent might present a patient-history detail as if it came from medical literature. A source-blind checker would miss both errors because the fact itself is supported somewhere in the evidence.\n\nProvenanceGuard runs as a post-generation verification layer, maintaining source identity through the entire pipeline. It decomposes answers into claims, identifies the most relevant source for each, checks whether that source actually supports it, and compares it to the source the agent names or implies. On a medical dataset of 361 expert-reviewed claims, it caught 138 of 139 unsupported claims while identifying the correct source about 86% of the time—outperforming source-blind baselines like MiniCheck and RAGAS Faithfulness. When answers fail verification, a repair loop can revise them or fall back to safer fallback text.",
+      "why_it_matters": "For your consulting work and teaching, this is a concrete, production-relevant technique for making agents trustworthy in data-sensitive domains where getting the provenance right matters as much as getting the fact right. The paper shows how to detect and repair a failure mode most existing evaluation methods miss entirely. In India's growing AI consultancy market, clients building financial, healthcare, and legal agents will need this kind of source-grounded verification—it's a technical differentiator for shops building high-integrity systems.",
+      "potential_use": "Teach this as a case study in your AI reliability workshops: decompose a multi-tool agent answer, show where source-blind verification would pass it, and demonstrate how source-aware checking catches the attribution error. For Applicative AI engagements, ProvenanceGuard's modular design (local models, cloud-compatible, offline-friendly) makes it a template for building verification layers into your own client agent systems—especially valuable for regulated industries. The paper's medical traces and repair methodology are directly applicable to building internal verification workflows.",
+      "sources": [
+        {
+          "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+          "publisher": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
+        }
+      ]
+    },
+    {
+      "slug": "white-house-launches-america-gov-chatbot",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "White House launches AI chatbot America.gov to help navigate federal services",
+      "dek": "Google's Gemini and Elon Musk's Grok power the bot, but LLM hallucinations pose real risks for high-stakes decisions.",
+      "summary": "The White House announced America.gov, an AI chatbot built with Google's Gemini and Grok, designed to consolidate access to federal services across thousands of government websites. President Trump framed it as replacing exhausting searches with \"one front door for every single question.\" U.S. Chief Design Officer Joe Gebbia confirmed both AI models power the system.\n\nThe bot addresses a legitimate pain point: citizens currently navigate fragmented government information across tens of thousands of sites to handle applications, renewals, and filings. But the deployment highlights a tension in LLM deployment to mission-critical systems. Large language models remain prone to hallucinations—false but plausible-sounding outputs that users often trust. The military recently aborted an armed operation after an AI misidentified a vessel as a nuclear threat; though no lives were lost, the error underscores what happens when users treat model outputs as fact.",
+      "why_it_matters": "America.gov is a live case study in applying LLMs to navigation of complex, high-stakes information where errors carry real consequences—missed deadlines, denied benefits, tax penalties. For your consulting practice and workshops, it demonstrates the verification problem: when citizens rely on chatbot advice for food stamps or visa renewal, who ensures accuracy and what happens when the model hallucinates? The deployment raises concrete questions about guardrails, retrieval-augmented generation, and when LLMs should govern access to critical information versus when rule-based or verified databases are mandatory.",
+      "potential_use": "Use America.gov as a workshop case study on LLM limitations and governance; explore with clients how to build verified information pipelines and human review loops into chatbot systems serving high-stakes domains. For your consulting: identify opportunities to help agencies implement America.gov properly—through RAG over reliable data sources, fallback mechanisms, and clear disclaimers about chatbot limitations. Note India's parallel challenge as government services digitize; similar governance questions will arise for platforms like DigiLocker or tax filing portals integrating AI assistance.",
+      "sources": [
+        {
+          "title": "Can a chatbot fix the government maze? The White House is about to find out",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/09/29/can-a-chatbot-fix-the-government-maze-the-white-house-is-about-to-find-out/"
+        }
+      ]
+    }
+  ]
+}
