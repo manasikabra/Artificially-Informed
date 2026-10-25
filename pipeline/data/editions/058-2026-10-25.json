@@ -1,0 +1,48 @@
+{
+  "number": 58,
+  "date": "2026-10-25",
+  "stories": [
+    {
+      "slug": "ai-agents-text-messaging-deployment",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "16+ AI agents now work through text—taking actions without app downloads",
+      "dek": "Instinct hits $10B valuation, but a wider ecosystem of specialized agents handles tasks via SMS, iMessage, WhatsApp, and Telegram.",
+      "summary": "The pattern for deploying AI assistants has shifted. Rather than requiring end-users to install yet another application, a growing cohort of agents operate entirely through messaging platforms—SMS, iMessage, RCS, WhatsApp, Telegram, and Signal. You text a request; the agent parses context, connects to your existing services (Gmail, Google Calendar, Slack, etc.), executes the task, and follows up. This works for task completion: scheduling appointments, adding calendar events, making reservations, canceling subscriptions, booking flights, organizing family logistics, and multi-step workflows that the agent can verify and iterate on.\n\nThe landscape spans general-purpose assistants (Instinct, Martin, Rene, Folk) and domain-specific agents focused on families (Fambot, Ollie, Ohai, Orbits), travel (Miso), and work. Instinct, the highest-profile example after raising $1 billion in September 2026, began assigning dedicated email addresses to agents so they can autonomously sign up for services and manage accounts—a capability raising privacy concerns. Most competitors charge $1–$8/month or a free beta tier; family agents trend higher ($9–$25/month). A few differentiate on architecture: Folk runs on its own private cloud and can execute code; Comma operates open-source and cross-device; Poke became the first AI agent approved for Apple's Messages for Business platform before its parent company was acquired by Cognition.",
+      "why_it_matters": "For an AI consultancy and workshop educator, messaging-based agents demonstrate a mature deployment pattern that sidesteps installation friction and leverages existing user habit. The variety of these agents—spanning price, capability, and specialization—provides concrete reference implementations for discussing agent architecture (context retention, multi-step reasoning, third-party integrations), governance (permission-before-action vs. autonomous), and go-to-market strategy. This is also a bellwether for how enterprises will embed agents into existing communication infrastructure rather than forcing users to context-switch.",
+      "potential_use": "Use this landscape as a workshop case study: have participants reverse-engineer one agent's capability stack and discuss trade-offs (e.g., Instinct's autonomous email account creation vs. Maverick's permission-before-action model, or Folk's code execution vs. Comma's lightweight open-source approach). For Applicative AI consulting, this clarifies messaging-based automation as a distinct deployment vector for clients building internal agents or customer-facing task assistants—and raises the question of whether your clients' workflows live in Slack, WhatsApp, or email where agents could operate natively.",
+      "sources": [
+        {
+          "title": "Here are the top AI agents that can live in your text messages",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/"
+        }
+      ]
+    },
+    {
+      "slug": "block-dessa-speech-model-local",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 6,
+      "headline": "Block releases Dessa, a full-duplex voice model that runs on consumer hardware",
+      "dek": "Jack Dorsey's company trained the model end-to-end on speech, claiming it captures emotion without text-to-speech pipelines.",
+      "summary": "Block's research lab has released Dessa, a full-duplex speech-to-speech model trained entirely on human speech data using a single NVIDIA GPU rack. Unlike existing voice AI systems that convert speech to text as an intermediate step, Dessa operates directly on speech, which Block argues preserves emotional nuance, pacing, and naturally-occurring sounds like pauses and laughter. The model can run locally on consumer-grade hardware—a MacBook M4 Max or equivalent—without cloud connectivity, trading off scale for privacy and latency.\n\nBlock claims existing voice models sound robotic because they funnel speech through text pipelines or rely on tagged voice attributes to approximate emotion. Dessa's developers say emotion is inherent to their architecture and emerged from training on conversational speech. In published examples, the model adjusts its tone contextually: sounding fatigued when discussing tiredness, or emotional while discussing interpersonal comfort.\n\nCurrently, Block is restricting access and soliciting safety researchers to probe failure modes—specifically, scenarios where a voice agent might manipulate or deceive the person it's speaking with. The company operates in financial services and small-business payments; existing Square products already use voice AI for order-taking, and on-device inference could reduce operational costs and expand use cases requiring customer-facing voice interaction.",
+      "why_it_matters": "For your consultancy and workshops, Dessa demonstrates how inference optimization enables AI capabilities to shift from cloud to edge—a practical pattern your clients will face as they build customer-facing systems. The model surfaces a real trade-off: end-to-end speech training sidesteps the lossy text bottleneck, but we don't yet know how Block steers emotion or how robust the model is against adversarial use. Understanding both the technical architecture and the safety questions is relevant to advising on voice AI deployment in India's fintech and customer service sectors.",
+      "potential_use": "Build a workshop demo comparing speech-to-speech versus traditional speech-to-text-to-speech pipelines, grounding the discussion in Dessa's architecture. For consulting engagements with Indian fintech and e-commerce firms evaluating voice agents, use Dessa as a case study on inference costs, privacy trade-offs, and the emerging capability gap between cloud-native and on-device models.",
+      "sources": [
+        {
+          "title": "Block’s new voice model sounds eerily human",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/"
+        }
+      ]
+    }
+  ]
+}
