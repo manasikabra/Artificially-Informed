@@ -1,0 +1,27 @@
+{
+  "number": 59,
+  "date": "2026-10-26",
+  "stories": [
+    {
+      "slug": "ai-roi-gap-non-tech-companies",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Most non-tech companies see zero financial payoff from AI spending, Apollo economist finds",
+      "dek": "Analysis of S&P 493 companies shows flat profit margins and revenue per worker despite massive AI investments.",
+      "summary": "Apollo Global Management's chief economist Torsten Slok recently analyzed 493 large non-tech corporations—the S&P 500 minus Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia, and Tesla—and found no evidence that their substantial AI spending has improved financial outcomes. Profit margins and revenue per worker remain flat across the group, with no measurable productivity gains materializing.\n\nSlok argues the problem runs deeper than execution lag. The core challenge is that corporate AI deployments are tackling the wrong problem: \"AI may be a great calculator, but in business, intelligence is mostly judgment.\" He points out that AI lacks the contextual understanding needed to drive actual business value—it cannot account for organizational culture, trust, ethical trade-offs, or the unwritten rules that shape reputation and revenue. These judgment calls, not raw intelligence, are what ultimately move margins.\n\nRecent studies align with this finding, suggesting the productivity gains promised by AI evangelists have not yet materialized in practice. The gap raises a hard question for corporate boardrooms: does investing in AI infrastructure meaningfully change business outcomes, or are most deployments solving for the wrong metrics?",
+      "why_it_matters": "This is concrete evidence that the hype-to-reality gap on AI ROI is real and measurable, not theoretical. For your consulting work, it clarifies where clients are likely failing—not in the technology itself, but in structuring problems that AI can actually solve and in connecting AI outputs to judgment calls that drive revenue. For workshops, it's a compelling foundation for discussing why most AI pilots don't scale and what business architecture is needed to move past the flat-payoff trap.",
+      "potential_use": "Use this as a framework in consulting: ask clients not \"Do you have AI?\" but \"What judgment calls is AI informing?\" Build a workshop module on the judgment-versus-calculation gap, walking participants through real deployment failures and showing how to audit their own AI initiatives for this mismatch. Internally, it sharpens Applicative AI's positioning around solving business problems rather than deploying technology.",
+      "sources": [
+        {
+          "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/"
+        }
+      ]
+    }
+  ]
+}
