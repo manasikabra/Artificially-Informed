@@ -1,0 +1,68 @@
+{
+  "number": 65,
+  "date": "2026-11-01",
+  "stories": [
+    {
+      "slug": "chatgpt-account-takeover-exploit-chain",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "ChatGPT Account Takeover via Sandbox Escape and API Misuse",
+      "dek": "Researchers chained together a cross-origin message handler, library vulnerability, and CSP bypass to execute arbitrary code and steal user data through shared links.",
+      "summary": "Parameter Labs disclosed a multi-stage vulnerability in ChatGPT's HTML preview feature (sandboxed iframes for interactive custom apps). The attack began with the MathLive JavaScript library, which OpenAI includes for graphing support. This library exposes a virtual keyboard triggerable via postMessage() calls from within the sandbox—a communication mechanism with no origin validation.\n\nThe message handler in the parent page used innerHTML to process these messages, allowing any sandboxed iframe to inject arbitrary HTML. While CSP rules blocked inline scripts, they permitted loading from YouTube. By injecting an iframe with YouTube's oEmbed endpoint, attackers bypassed the sandbox restrictions and CSP to gain JavaScript execution in the parent context.\n\nFrom there, the exploit became straightforward: fetch private user data from OpenAI's APIs and exfiltrate it via image requests. The final payload was a shareable ChatGPT URL—when an authenticated user clicked it, the malicious iframe would run and steal their data or perform actions on their behalf. OpenAI patched the flaw and issued a $5,000 bounty.",
+      "why_it_matters": "This demonstrates the real-world risk of sandbox escapes in production AI systems, combining library-level design flaws with origin-validation gaps and CSP misconfiguration. For consultancies advising enterprise AI adoption, it's a concrete example of how multiple layers of isolation can fail when any single component is overlooked. The low bounty suggests major platforms may underweight the severity of auth-context exploits that affect user data at scale.",
+      "potential_use": "Use this as a workshop case study on defense-in-depth failures: trace the attack chain to show how postMessage validation, sandbox attribute enforcement, and CSP strictness are not independent safeguards. For enterprise AI implementations, it illustrates why security reviews of platform dependencies (like third-party JS libraries) matter as much as first-party code.",
+      "sources": [
+        {
+          "title": "How We Took Over ChatGPT Accounts",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/"
+        }
+      ]
+    },
+    {
+      "slug": "apple-ceo-ai-not-for-ais-sake",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "Apple CEO: We don't ship AI just to ship AI",
+      "dek": "John Ternus argues the company's cautious AI stance reflects a philosophy that useful products matter more than technological novelty.",
+      "summary": "John Ternus, Apple's newly appointed CEO as of September 2026, defended the company's measured approach to AI deployment in a recent Wired interview. Apple has faced criticism over the past two years for lagging on AI features, including a delayed rollout of an upgraded Siri that only shipped this summer. Ternus acknowledged the skepticism but stood firm: \"We don't want to ship AI for AI's sake.\"\n\nHis framing rejects the assumption that integrating AI automatically improves a product. Instead, he described Apple's criterion as straightforward—did the company build something people genuinely love? The distinction matters because it inverts the priority. Rather than leading with the technology and asking what it can do, Apple asks what users need and deploys AI only when it delivers clear value.\n\nWhen pressed on whether AI agents might obsolete entire categories of apps, Ternus sidestepped the disruption narrative and returned to principle: product creation is \"deeply human and personal.\" He affirmed that Apple will \"absolutely leverage AI,\" but only as a means, not an end. The stance is both a defense of past delays and a signal about future choices.",
+      "why_it_matters": "For an AI consultancy, this is a master class in how a major platform vendor thinks about AI adoption. Ternus articulates exactly the principle many enterprise clients struggle with—the difference between capability and value. It's also a useful corrective to the agent-hype narrative: even at Apple's scale, the company is not betting its ecosystem on replacing existing abstractions wholesale. For your workshops, this is a concrete example of outcome-focused AI strategy versus novelty-chasing.",
+      "potential_use": "Use this as a workshop opening: ask participants to identify one feature in their own AI roadmaps that passes Ternus's test (would people love this?) versus one that doesn't. It's also a case study worth circulating to clients wavering between \"because AI is hot\" and \"because it solves a real problem.\" Frame it as the Apple principle: ship products people love, not technology for its own sake.",
+      "sources": [
+        {
+          "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/"
+        }
+      ]
+    },
+    {
+      "slug": "datasette-llm-default-model",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 6,
+      "headline": "Datasette-llm now auto-detects default model, removing config friction",
+      "dek": "The 0.1a9 release simplifies setup for Datasette Agent by inheriting model defaults from the LLM CLI tool.",
+      "summary": "Datasette-llm 0.1a9 removes a friction point in using Datasette Agent: the plugin now automatically picks up the default model configured in the LLM tool, rather than requiring explicit model specification at startup. Previously, launching Datasette Agent meant either setting a model via command-line flag or config file. Now a bare invocation like `uvx --with datasette-agent datasette content.db --internal internal.db` works immediately, assuming LLM already has a default model set. This is a small but meaningful usability win—the tool reads sensible defaults from an adjacent system rather than making users reconfigure basics from scratch.",
+      "why_it_matters": "For your workshops and consulting work, this illustrates a practical principle: AI tooling workflows improve when components share configuration sensibly. Datasette-llm is a real example of binding LLMs to structured data systems—a common client need. The reduced setup friction means you can move faster from concept to working prototype when building agents over databases, and you have a concrete, minimal tool to demonstrate to clients how LLM-aware query systems actually work in practice.",
+      "potential_use": "Use Datasette Agent as a workshop exercise to show how LLM integration reduces boilerplate—set up a local database, bind it to an agent with a single command, and show participants how natural language queries map to structured SQL. This is also a good lens for consulting: when evaluating AI workflows for clients, check whether tools inherit defaults from each other or force repetitive configuration at every layer.",
+      "sources": [
+        {
+          "title": "datasette-llm 0.1a9",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/"
+        }
+      ]
+    }
+  ]
+}
