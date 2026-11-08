@@ -1,0 +1,27 @@
+{
+  "number": 72,
+  "date": "2026-11-08",
+  "stories": [
+    {
+      "slug": "china-inner-mongolia-datacenter-800v",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "india-ecosystem"
+      ],
+      "relevance_score": 7,
+      "headline": "China's Galaxy datacenter runs 800V DC natively, powered by dedicated wind farms",
+      "dek": "SemiAnalysis toured a 800MW campus in Inner Mongolia that achieves cost parity with US builds through vertical integration and renewable power, bypassing AC infrastructure entirely.",
+      "summary": "SemiAnalysis visited Galaxy, an 800MW AI datacenter campus under construction in Ulanqab, Inner Mongolia, developed by Envision Group. The facility's first 120MW phase was completed in under a year at roughly one-fifth the cost of comparable US builds. The site is built around Envision's own power systems: three 420MW wind farms sited remotely but connected via dedicated power lines, a 4-hour battery storage system that smooths load across calm periods, and integrated solar and energy management.\n\nThe technical approach departs significantly from US infrastructure. Rather than standard AC to DC conversion via UPS and transformer stages, Galaxy deploys solid-state transformers (SSTs) that convert 10kV AC directly to 800V DC at the rack—the same architecture Nvidia is pushing for its next-generation Blackwell-era systems. This 5MW pilot runs live workloads today. Cooling uses a hybrid liquid-air design without a central chiller plant, relying instead on higher inlet water temperatures and shared loops common in northern China datacenters for years.\n\nThe broader context matters: Inner Mongolia holds 57% of China's usable wind resources, with capacity factors of 35–40% in Ulanqab. Policy actively directs new compute demand toward regions with excess renewable generation. Envision's model—called source-grid-load-storage (SGLS)—ties generation, storage, and consumption together via private infrastructure rather than public grid. The company aims to supply over 60% of Galaxy's power from its own wind, achievable through oversizing capacity, distributed siting, and battery shifting. Galaxy is first of a planned 3GW datacenter portfolio for Envision in the region. Surrounding Chahar High-tech Zone has 22 concurrent datacenter projects and nearly 30,000 construction workers, suggesting industrial-scale ecosystem development.",
+      "why_it_matters": "For your consultancy and teaching, this is a working reference point for cost, power, and thermal architectures at hyperscale that diverges from US precedent—not just engineering choices but capital efficiency and power risk mitigation. For India's AI infrastructure roadmap, Galaxy demonstrates that vertically integrated renewable-powered datacenters are economically viable at large scale; India's wind and solar resources rival China's, but policy and financing frameworks remain underdeveloped. The 800V DC pathway shown here will likely become table stakes for next-gen clusters, making familiarity with its economics and integration challenges immediately relevant to enterprise and government clients.",
+      "potential_use": "Workshop demo: walk through the SGLS power model and show how oversizing renewable capacity plus battery storage shifts intermittency from an operational problem to a design parameter. Use Galaxy's wind farm sizing and capacity factor math as a template. Consulting angle: advise Indian datacenter operators and government bodies on how to structure long-term renewable power contracts and private transmission—Envision's model is replicable but requires policy change. Learning note for your own expertise: 800V DC SST architecture is the inflection point where thermal, electrical, and real-estate costs converge; understanding this transition is essential for credible infrastructure advising over the next 2–3 years.",
+      "sources": [
+        {
+          "title": "We Visited China’s Stargate in Inner Mongolia",
+          "publisher": "SemiAnalysis",
+          "url": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner"
+        }
+      ]
+    }
+  ]
+}
