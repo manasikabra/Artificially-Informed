@@ -1,0 +1,26 @@
+{
+  "number": 73,
+  "date": "2026-11-09",
+  "stories": [
+    {
+      "slug": "sashikumar-sreedharan-sarvam-president",
+      "primary_lens": "india-ecosystem",
+      "lenses": [
+        "india-ecosystem"
+      ],
+      "relevance_score": 7,
+      "headline": "Google Cloud India lead Sreedharan joins Sarvam as President and CBO",
+      "dek": "The move signals Sarvam's plans to scale enterprise and government AI adoption across India, with over 100 institutions already using its platform.",
+      "summary": "Sashikumar Sreedharan, who led Google Cloud's India operations as Managing Director, has joined Sarvam AI as President, Chief Business Officer, and board member. He brings more than 30 years leading enterprise technology businesses, including five-plus years heading Microsoft India's enterprise division.\n\nAt Sarvam, Sreedharan will oversee business expansion with enterprises and government, plus responsibility for marketing, finance, forward-deployed engineering, service delivery, and commercial operations. The hire coincides with Sarvam's customer base reaching over 100 enterprises and government institutions.\n\nSreedharan's appointment reflects Sarvam's stated direction: moving beyond research into products and company operations at larger scale. The firm positions itself around the idea that enterprises should own their AI—keeping data, models, and agents on-premise so value stays within the organization rather than flowing to cloud providers.",
+      "why_it_matters": "This hire demonstrates India's maturing AI ecosystem attracting established enterprise-sales leadership away from global cloud giants. For an India-focused observer, it signals where business energy is moving: Sarvam's bet on domestic enterprise and government AI adoption, and the shift toward on-premise, data-sovereign models—a strategic emphasis likely to shape how Indian organizations approach AI over the next phase.",
+      "potential_use": "For your India ecosystem tracking: Sreedharan's move is a concrete signal of talent and capital flowing toward local AI companies competing on enterprise go-to-market, not just research. For client consulting: understanding Sarvam's positioning on data sovereignty and on-premise deployment could be useful when advising organizations on vendor selection and architectural choices.",
+      "sources": [
+        {
+          "title": "Sashikumar Sreedharan joins Sarvam as President and CBO",
+          "publisher": "Sarvam AI Blog",
+          "url": "https://www.sarvam.ai/blogs/sashikumar-sreedharan-joins-sarvam"
+        }
+      ]
+    }
+  ]
+}

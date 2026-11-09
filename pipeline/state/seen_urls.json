@@ -343,7 +343,11 @@
   "https://simonwillison.net/2026/Nov/4/datasette-llm/",
   "https://simonwillison.net/2026/Nov/5/paul-ford/",
   "https://simonwillison.net/2026/Nov/6/nilay-patel/",
+  "https://simonwillison.net/2026/Nov/7/hn-50407316/",
   "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+  "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
+  "https://simonwillison.net/2026/Nov/9/details-summary/",
+  "https://simonwillison.net/2026/Nov/9/hn-50421091/",
   "https://simonwillison.net/2026/Oct/1/matthew-green/",
   "https://simonwillison.net/2026/Oct/10/python-actions/",
   "https://simonwillison.net/2026/Oct/10/the-new-york-times/",
@@ -1167,6 +1171,8 @@
   "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/",
   "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
   "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+  "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/",
+  "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
   "https://techcrunch.com/podcast/amazon-drops-data-center-ndas-and-ai-agents-want-your-credit-card/",
   "https://techcrunch.com/podcast/an-anthropic-researchers-doomsday-warning-comes-at-a-very-interesting-time/",
   "https://techcrunch.com/podcast/apples-ternus-era-begins-as-nvidia-bets-on-the-whole-ai-stack/",
@@ -1248,5 +1254,6 @@
   "https://www.sarvam.ai/blogs/sarvam-hq-ids-mou",
   "https://www.sarvam.ai/blogs/sarvam-prism",
   "https://www.sarvam.ai/blogs/sarvam-studio",
-  "https://www.sarvam.ai/blogs/sarvam-vision-2-1"
+  "https://www.sarvam.ai/blogs/sarvam-vision-2-1",
+  "https://www.sarvam.ai/blogs/sashikumar-sreedharan-joins-sarvam"
 ]
