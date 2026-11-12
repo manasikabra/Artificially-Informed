@@ -1,0 +1,111 @@
+{
+  "number": 76,
+  "date": "2026-11-12",
+  "stories": [
+    {
+      "slug": "jiostar-ai-discovery-500m-scale",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d",
+        "india-ecosystem"
+      ],
+      "relevance_score": 8,
+      "headline": "JioStar's Vijay Seshadri on shipping AI discovery to 500M users",
+      "dek": "The platform's chief architect shares lessons on evals, guardrails, and production deployment learned from India's largest streaming audience.",
+      "summary": "JioStar, streaming to 500 million users, embedded AI-powered discovery directly into its platform. Vijay Seshadri, the system's chief architect, documented how the team approached evaluation, safety guardrails, and the gap between experimental AI and what actually works at that scale.\n\nThe core challenge was neither the model itself nor the infrastructure—it was ensuring recommendations were reliable enough for a user base spanning vastly different preferences, connection speeds, and devices. This required building evals that didn't just measure accuracy in test sets but surfaced failure modes under production load and regional variation. Guardrails weren't bolted on late; they were baked into the discovery logic from the start, treating safety constraints as a design input rather than an afterthought.\n\nThe lessons focus on the messy middle ground between research and production: how to tune a system when you can't afford to break the experience for millions, how to measure what users actually do versus what metrics predict, and how to iterate when each change touches hundreds of millions of requests.",
+      "why_it_matters": "For Applicative AI, this is a rare public case study from an India-scale operation showing how production AI differs from benchmark performance. The eval and guardrail patterns are directly applicable to your consulting and workshop work. For your India-ecosystem lens, it signals how major platforms are moving beyond AI experiments to embedded AI as core product—a shift your clients will soon face.",
+      "potential_use": "Use this as a workshop case study on evals and guardrails under real production constraints. For consulting: benchmark your clients' evaluation practices against JioStar's production-first approach. India-ecosystem note: document this as evidence that large-scale AI adoption in India is now moving from pilot to platform integration.",
+      "sources": [
+        {
+          "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/jiostar-vijay-seshadri"
+        }
+      ]
+    },
+    {
+      "slug": "gemini-decisions-api-launch",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Google launches Gemini Decisions API for fast, structured multimodal choices",
+      "dek": "New specialized model scores up to 1,000 yes/no and choice questions in a single forward pass at 150-250ms latency.",
+      "summary": "Google introduced the Gemini Decisions API, powered by a new Gemini Decision 1 model designed specifically for bounded, closed-set decisions rather than open-ended text generation. The API accepts multimodal input—text, images, audio, video, and PDFs up to 256K tokens—and can evaluate up to 1,000 independent questions in one request, returning confidence scores for each answer.\n\nThe model evaluates options without token-by-token decoding, delivering results in 150-250ms end-to-end latency. Pricing is $0.10 per million input tokens with zero output-token charges, making it roughly 5x cheaper than running comparable tasks through Gemini Flash-Lite. Confidence scores (0 to 1) let applications route ambiguous cases to fallback logic or human review.\n\nThe API supports three question types: yes/no checks with optional criteria, multiple-choice selection from 2 to 255 options, and rubric-based scoring across ordered categories. Google teams are already using it for model routing (reducing latency by up to 40% on everyday queries), rapid design iteration, safety detection, and other deterministic workflows where speed and calibration matter more than generative fluency.\n\nThe Decisions API is available through Google AI Studio with ecosystem integrations rolling out across LangChain, Vercel, LiteLLM, Pydantic AI, and other developer platforms.",
+      "why_it_matters": "This signals a deliberate shift in LLM application patterns: away from treating all tasks as text-generation problems and toward purpose-built models for specific decision classes. For your consultancy, it's a concrete example of how enterprise AI moves from general-purpose chat to deterministic, auditable workflows with measurable latency and cost. The emphasis on calibration (confidence scores, low error rates) and the ability to batch questions address real reliability demands in production systems—key considerations when advising clients on model selection and integration patterns.",
+      "potential_use": "Workshop module: walk through the decision-API pattern as an alternative to prompt engineering for classification tasks; compare token costs and latencies against traditional LLM approaches. Consulting angle: audit client workflows (routing, policy checks, safety gates) that could be migrated from custom classifiers or chained LLM calls to a single Decisions API request—often with cost and latency gains. India-ecosystem note: as Indian enterprises scale AI applications in fintech, logistics, and e-commerce, structured decision APIs reduce cloud egress costs and latency, making locally-indexed or cached decision layers more viable.",
+      "sources": [
+        {
+          "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+          "publisher": "Google AI Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+        }
+      ]
+    },
+    {
+      "slug": "plurai-simulation-ai-agents",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Plurai raises $13M to boost AI agent reliability using autonomous-car simulation techniques",
+      "dek": "The startup believes digital twins and synthetic data can push agent accuracy from 76% to production-ready levels, enabling smaller models to replace expensive frontier AI.",
+      "summary": "Plurai, founded by former Waymo engineers, is attacking a real weakness in today's AI agents: published benchmarks show the best models succeed on only 75–83% of tasks, with accuracy dropping further in realistic conditions like handling multiple databases or long customer conversations.\n\nThe startup's answer borrows directly from autonomous driving. Instead of betting everything on larger frontier models, Plurai creates a digital twin of each customer's systems—their knowledge bases, APIs, and tools—then maps all possible agent workflows. This lets them generate synthetic data covering edge cases and use it to fine-tune small, open-weight models specific to that business. Early tests with Nvidia and Nebius showed their models matching midtier frontier models at 1–2 orders of magnitude lower cost.\n\nThe $13M seed round (led by Team8, with backing from Google DeepMind researcher Reah Miyara among others) reflects investor conviction that this cost story will matter. As Claude Opus achieves 76.8% accuracy in simulated corporate tasks and agents routinely break on spending policies or context overload, businesses are already questioning whether paying for frontier model inference at scale makes sense for highly specific workflows.",
+      "why_it_matters": "For your consultancy: Plurai's model addresses the gap between agent demos and production deployments—exactly where your clients are likely struggling. The approach of decomposing tasks, building synthetic data, and post-training small models is teachable and replicable, making it a concrete framework for workshops on agent architecture. For India's ecosystem: as cost becomes the constraint on AI deployment (not capability), this technique of task-specific model tuning represents an economic advantage for emerging markets and smaller organizations that cannot sustain frontier model costs.",
+      "potential_use": "Workshop demo: Build a simplified digital twin of a customer's internal systems, simulate failure modes (e.g., conflicting data sources), and show how synthetic data from simulation improves a small model's performance—a hands-on case for why agents need testing, not just deployment. Consulting angle: Help clients audit their current agent deployments against real failure modes and cost-justify a Plurai-like approach rather than perpetually scaling up to larger (more expensive) frontier models.",
+      "sources": [
+        {
+          "title": "Plurai wants to help AI agents work better using the same approach that helped get self-driving cars to roads",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads/"
+        }
+      ]
+    },
+    {
+      "slug": "databricks-genie-agent-unfiltered-feedback",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "Databricks CEO uses AI agent to bypass organizational silence and surface hard truths",
+      "dek": "Genie, the company's upgraded agent, helps leaders access information employees won't say directly—a pattern that scales beyond the 150-person relationship limit.",
+      "summary": "Databricks rolled out an updated version of Genie, its AI agent, designed to handle multistep tasks that require sustained work over time. The system relies on an ontology built specifically to give the agent contextual awareness of data customers store on the Databricks platform, allowing it to work unsupervised once assigned a job.\n\nCEO Ali Ghodsi demonstrated the agent's practical application by showing how he uses it internally to navigate a problem that grows with company size: organizational silence. At 12,000 employees, he can't maintain the direct relationships that existed when Databricks was small. Sales teams won't confess failed pitches to the CEO; HR won't admit failed ideas for boosting satisfaction. Genie became his tool to bypass this silence—it analyzed employee survey pain points, evaluated executive fixes that likely wouldn't work, summarized a lost deal to show what the prospect actually needed, and even prepped him for interviews.\n\nGhodsi framed this as a scaling problem. Anthropologist Robin Dunbar's research suggests humans can maintain stable relationships with roughly 150 people; beyond that threshold, information flows dry up for leaders. \"Anyone who has more than 150 employees,\" he said, \"can get value out of this.\" He positioned Genie as doing for business operations what AI tooling has already done for engineering teams—automating routine work and amplifying human judgment with fresh data.",
+      "why_it_matters": "For your consulting work, this is a concrete pattern for how agents solve an endemic enterprise problem: leaders systematize blindness. For your workshops, it's a teachable case where autonomous systems don't just automate routine tasks—they restore information flows that organizational hierarchy blocks. For India's ecosystem, it illustrates how agent infrastructure (ontologies, tool integration, cost controls) will differentiate platforms as a table-stakes capability for knowledge-work automation.",
+      "potential_use": "Use Genie's design as a workshop case study on agent-as-information-broker in knowledge work; build a consulting engagement around designing and instrumenting feedback ontologies for your clients' internal agent deployments; track how Databricks' Unity Gateway cost controls become a standard feature in India-based enterprise AI tools as agent adoption scales.",
+      "sources": [
+        {
+          "title": "Databricks’ new AI agent tells CEO Ali Ghodsi the unvarnished truth",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth/"
+        }
+      ]
+    },
+    {
+      "slug": "coreweave-prepayments-short-contracts",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 6,
+      "headline": "CoreWeave shifts to prepayments and short-term contracts to fund infrastructure buildout",
+      "dek": "The AI compute provider is chasing higher pricing on short-term deals while securing customer upfront payments to avoid unsecured debt markets.",
+      "summary": "CoreWeave reported $3.66 billion in quarterly revenue (up 168% year-over-year) but posted a $709 million net loss and $846 million in interest expense, forcing a strategic pivot in how it finances its $132.5 billion backlog. Rather than tap unsecured debt markets at current yields, the company is pursing three tactics: requiring customer prepayments (expecting $9 billion over three months), borrowing against specific customer contracts through secured loans like its August $2.6 billion facility, and shifting a larger portion of capacity to shorter-term deals.\n\nThe pricing differential reveals the math behind this strategy. CoreWeave is charging more than $40 million per megawatt annually for short-term contracts, compared to $20–25 million for four- to five-year arrangements. The company raised prices 25% in July and another 10% later in the quarter, with further increases expected. Short-term contracts let CoreWeave reprice frequently and capture demand spikes, but lenders prefer longer contracts for their predictable cash flow—a tension now reflected in bond yields above 15%.\n\nThis approach mirrors what larger rivals like Nebius and IREN have already done: lean heavily on Big Tech's prepayments to fund compute expansion. It's a bet that sustained high demand justifies locked-in lower prices on long-term contracts, while near-term capacity can command premium rates. The risk is contract renewal pressure if demand cools or if customers balk at repricing on renewal.",
+      "why_it_matters": "For an AI consultancy and workshop educator, this illustrates the hard economics of infrastructure-as-foundation: compute providers are capital-constrained despite explosive revenue growth, so they're extracting cash from customers upfront and shifting risk back to them through variable pricing. This dynamic shapes what compute infrastructure costs your clients and how constraints ripple through AI project budgeting and timelines. Bond investors' wariness (15%+ yields) signals they're pricing in renewal and demand risk—a signal worth tracking for anyone advising on long-term AI infrastructure strategy.",
+      "potential_use": "Use this as a case study in AI infrastructure economics workshops: walk through CoreWeave's financing constraints, the short-term vs. long-term contract trade-off, and why customers now face prepayment demands and rising prices. For consulting: help clients model the total cost of AI infrastructure under these new terms, including the risk of repricing at renewal. For India ecosystem tracking: monitor whether Indian enterprises face similar prepayment demands from global compute providers, signaling how capital pressures in AI infrastructure may affect adoption and cost barriers for Indian teams.",
+      "sources": [
+        {
+          "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/"
+        }
+      ]
+    }
+  ]
+}
