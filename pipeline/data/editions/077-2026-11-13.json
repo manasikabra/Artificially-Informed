@@ -1,0 +1,170 @@
+{
+  "number": 77,
+  "date": "2026-11-13",
+  "stories": [
+    {
+      "slug": "amplitude-wave-agent-ships-features-days",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 8,
+      "headline": "Amplitude's Wave agent cuts product shipping from weeks to 1-2 days",
+      "dek": "The analytics platform built a proactive agent using OpenAI models that identifies improvements, generates code, and measures impact automatically.",
+      "summary": "Amplitude built Wave, a proactive product agent that operates across three stages of software development: identifying what to build, shipping code changes, and measuring results. The agent runs on OpenAI models and works alongside coding agents to move from idea to shipped product in one to two days—a dramatic compression from traditional dev cycles.\n\nWave represents a practical blueprint for orchestrating AI agents across a real product workflow. Rather than replacing humans, it accelerates the feedback loop: Wave identifies candidate improvements based on usage data, engineering teams use coding agents to implement changes, and the system automatically measures impact. This end-to-end automation on a core business function offers a concrete model for how companies can architect agent systems that handle discovery, execution, and validation.",
+      "why_it_matters": "This is a working example of agents automating an entire product development workflow—identification through shipping to measurement. For your consulting practice, it shows a clear pattern: define the workflow, wire AI agents into key decision and execution points, and measure against a specific business metric (shipping speed). For your workshops, Wave is teachable: it's not speculative AI capability, and the architecture is portable to other domains where fast iteration matters (QA, infrastructure, data pipelines).",
+      "potential_use": "Use Amplitude's Wave architecture as a case study in your AI agents workshop—walk participants through how to identify bottleneck stages in a workflow (discovery, execution, validation) and map agent capabilities to each. Also a strong reference for Applicative AI engagements: ask clients which of their core processes (product, ops, sales) could benefit from the same multi-stage agent orchestration and compression of cycle time.",
+      "sources": [
+        {
+          "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/business/customer-stories/amplitude"
+        }
+      ]
+    },
+    {
+      "slug": "gondola-doubles-revenue-with-codex",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "Gondola doubles revenue by integrating Codex into engineering workflow",
+      "dek": "The creative talent platform saw its lead engineer's output jump 50% after adopting OpenAI's code completion tool, alongside ChatGPT for daily operations.",
+      "summary": "Gondola, a platform connecting creatives with opportunities to gain credit and employment, doubled its revenue by embedding OpenAI's AI tools into core operations. The turning point came when the team adopted Codex, OpenAI's code completion model, which increased the lead engineer's output by 50%. Beyond engineering, the team deployed ChatGPT to streamline routine daily work and reduce friction across administrative tasks. This wasn't a large-scale replatforming—it was deliberate tool adoption at critical points in the workflow, showing how incremental AI integration can compound into meaningful business results.",
+      "why_it_matters": "This is a concrete example of how specialized AI tools map to measurable business outcomes in a real company, not a lab. For your consulting work, it demonstrates the productivity ceiling shift that becomes possible when engineering workflows are augmented with capable code tools—a pattern your clients are asking about. The 50% output gain from a single engineer is the kind of data point that changes conversations about AI ROI with skeptical stakeholders.",
+      "potential_use": "Use this case in workshops as a template for identifying bottleneck roles where AI can have outsized impact; workshop participants can map \"which engineer on your team could 1.5x their output?\" and think backward to tooling. For consulting engagements, this is a sharp example of how revenue growth can follow from targeted productivity gains rather than broad organizational transformation.",
+      "sources": [
+        {
+          "title": "Gondola doubles revenue as its team builds more with Codex",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/business/customer-stories/gondola"
+        }
+      ]
+    },
+    {
+      "slug": "holiday-extras-codex-booking-conversion",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "Holiday Extras boosts booking conversion with Codex-assisted development",
+      "dek": "The travel platform used OpenAI's code generator to accelerate app development and translate customer expertise into faster feature delivery.",
+      "summary": "Holiday Extras, a travel and holiday booking platform, has incorporated OpenAI's Codex into its development workflow to speed up app creation and enhance customer-facing features. By using Codex to assist with code generation, the team was able to translate domain knowledge—insights gathered from customer interactions and booking patterns—into functional applications more rapidly than traditional development cycles would allow.\n\nThe shift has produced measurable business impact: the company achieved higher booking conversion rates by deploying improved applications faster. Beyond the immediate uplift, Holiday Extras gained the ability to explore new product possibilities that would have been cost-prohibitive or time-intensive under conventional development constraints. The case demonstrates a practical model for embedding AI code assistance into established enterprise workflows.",
+      "why_it_matters": "For an AI consultancy, this illustrates how code generation tools affect real-world software delivery timelines and ROI—a concrete data point when advising clients on AI adoption. For someone building practical expertise, it shows the mechanics of turning domain knowledge into working code faster. It's a legitimate business outcome (conversion lift) tied to AI tooling, not aspirational talk.",
+      "potential_use": "Use as a workshop case study for demonstrating AI-assisted development workflows and the shift from \"tool experiment\" to integrated business process. Also relevant for L&D discussions: what skills and team structures enable developers to leverage Codex effectively, and how domain expertise becomes leverage rather than a development bottleneck.",
+      "sources": [
+        {
+          "title": "Holiday Extras is rethinking what it can build with Codex",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/business/customer-stories/holidays-extras-codex"
+        }
+      ]
+    },
+    {
+      "slug": "nectar-creator-agent-influencer-automation",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Nectar launches Creator Agent to automate influencer discovery and outreach",
+      "dek": "The AI agent searches 300 million creator profiles, drafts personalized pitches, and manages partnerships end-to-end—reducing weeks of manual work to automated workflows.",
+      "summary": "Nectar, an AI-powered marketing operating system founded by former Meta employees Misbah and Farah Uraizee, has released its Creator Agent to automate influencer marketing workflows. The agent searches across 300 million creator profiles on Instagram and TikTok, analyzing content to match creators with brands while evaluating brand safety through contextual understanding rather than keyword matching.\n\nOnce it identifies potential partners, the agent drafts personalized outreach messages adapted to each platform's tone and the brand's voice, creates landing pages to collect creator data, and manages the full partnership lifecycle—contracts, product gifting, logistics, conversation history. The system also suggests personalized engagement opportunities by flagging creator life milestones like engagements or achievements, enabling relationship-building beyond transactional deals.\n\nThe timing reflects market momentum: U.S. creator advertising spending is projected to hit $44 billion in 2026, and brands increasingly manage hundreds or thousands of creator relationships simultaneously. Nectar joins competitors like Aspire and GRIN in this space. The company, which raised $30 million in Series A funding from Menlo Ventures and Anthropic's Anthology Fund in May, plans to make the agent available through OpenAI's Model Context Protocol, allowing integration with Claude, ChatGPT, Gemini, and Copilot.",
+      "why_it_matters": "This demonstrates a mature AI agent application executing a complete, multi-step business workflow—discovery, personalization, relationship management, and measurement—with minimal human intervention. For your consultancy and workshops, it's a concrete case study in how agentic systems create value by reducing research friction and enabling brands to work at scale. It also shows practical approaches to AI safety (contextual brand safety rather than filtering) and personalization that adapt to platform norms, which are patterns worth understanding as you build expertise in agent architecture.",
+      "potential_use": "Use this as a workshop case study to explore agent design patterns: How does the system handle discovery (profile search), ranking, personalization, and long-term memory? Walk through the multi-platform adaptation angle—how the agent adjusts tone for TikTok vs. X—as a lesson in context-aware AI. For consulting: identify similar high-friction, high-volume manual workflows in your clients' operations (vendor discovery, customer matching, partnership sourcing) and map how an agentic approach could reduce weeks to days. The MCP availability also shows how general-purpose AI assistants are becoming platforms for domain-specific agent deployment.",
+      "sources": [
+        {
+          "title": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/"
+        }
+      ]
+    },
+    {
+      "slug": "granite-llmon-structured-markup-injection-defense",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "IBM's Granite gets LLMON, a markup language designed to stop prompt injection",
+      "dek": "Special tokens separate instructions from data, making indirect attacks nearly impossible while keeping model performance intact.",
+      "summary": "IBM and Hugging Face released experimental Granite 4.1 models (3B and 8B) trained to consume and generate LLMON, a markup language that uses reserved special tokens to mark instructions, data, requirements, and execution blocks. Unlike JSON (which encodes structure in characters that can appear in normal text), LLMON gives the model explicit, unambiguous boundaries: instructions are addressable by unique ID, data is clearly separated, and requirements are bound to specific inputs.\n\nThe core benefit is defense against indirect prompt injection—attacks where malicious instructions hide in user data, retrieved documents, or tool responses. On the OPI benchmark, LLMON models avoid 95% more attacks than the best open-source baseline and 47% more than the best frontier model, dropping attack success rates to nearly zero. A conventional model would have treated injected text as a potential instruction; LLMON models ignore data blocks that are not explicitly called out in the execution block.\n\nTraining involved re-serializing instruction-tuning corpora into LLMON format, then adding decoy blocks (unbound instructions and data) so the model learns to follow only what the execution block specifies. Reinforcement learning across five sequential stages (GRPO, RLHF, knowledge calibration, math, DPO) embedded the pattern. The result is a learned privilege rule, not an enforced guardrail: instructions reached through execution blocks are authoritative; anything in data blocks is material to read, not a command to follow.\n\nGeneral capability remains on par with standard Granite 4.1 Instruct models. LLMON is not a replacement for chat templates but an enrichment—the shipped template automatically converts named message parts into LLMON blocks. Teams with existing JSON pipelines can use lossless conversion tools. You can also define custom tag vocabularies and fine-tune a LoRA adapter for domain-specific structures; the blog includes examples for tool-calling agents and ScienceWorld task planning.",
+      "why_it_matters": "For your consulting and teaching: LLMON is a concrete technical pattern for hardening LLM applications against a real threat (indirect injection), and it does so without sacrificing performance—a rare outcome. It's also a clear teaching example of how tokenizer design and training methodology can bake in semantic constraints the model can actually learn. For building your own expertise: this is production-relevant infrastructure (structured I/O, safety, domain adaptation) in an open experimental form. For India's ecosystem: IBM Granite models are being positioned as accessible, customizable alternatives to frontier models; LLMON lowers barriers to domain-specific fine-tuning through LoRA rather than full retraining.",
+      "potential_use": "Run a workshop demo comparing LLMON vs. standard models on a live indirect injection attempt using the OPI benchmark or a custom example—show how the model fails with one and holds firm with the other. Build this into your consulting angle for enterprise clients needing RAG or multi-turn agent systems: LLMON is a design pattern you can implement now, not a future research project. Use the ScienceWorld notebook as a template to show how to define custom tag vocabularies and train adapters for specific domain tasks—directly applicable to client problems that need structured outputs.",
+      "sources": [
+        {
+          "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+          "publisher": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite"
+        }
+      ]
+    },
+    {
+      "slug": "united-blocks-ai-agents-booking",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 6,
+      "headline": "United Airlines blocks AI agents from booking flights over security and compliance risks",
+      "dek": "The airline is restricting third-party AI assistants to prevent credential leaks, unauthorized purchases, and violations of federal aviation rules on human check-ins.",
+      "summary": "United Airlines announced it will block AI agents and autonomous assistants from booking flights and managing reservations, citing two categories of risk. The first is cybersecurity: when users share account credentials with third-party AI assistants, those passwords can be compromised, creating exposure for sensitive information and enabling unintended purchases or changes to accounts and loyalty points. The second is regulatory: federal aviation rules require humans to personally complete flight check-ins to certify that baggage doesn't contain banned substances—a step AI systems cannot legally perform.\n\nThe move reflects a broader corporate pattern. Banks including Bank of America have issued similar warnings against sharing passwords with AI assistants. Airlines and financial institutions face a technical problem: their systems struggle to distinguish between legitimate customers and AI systems acting on their behalf, making comprehensive authentication difficult.\n\nUnited's restriction applies across its own digital platforms and indirectly through travel agencies and aggregators. The airline is updating its booking, ticketing, and distribution policies to enforce the ban. The decision marks a clear operational boundary: where regulatory compliance or security cannot be guaranteed, companies are choosing to block AI agent access rather than build tools to safely accommodate it.",
+      "why_it_matters": "For Applicative AI clients and workshop participants, this is a tangible example of where AI agent autonomy hits hard constraints in production systems. It's not a theoretical risk—it's driving policy at major enterprises. It also raises a practical consulting angle: when designing AI agent workflows, you need to map regulatory and security requirements upfront, not retrofit them. For your India ecosystem tracking, this signals how leading US enterprises are thinking about AI automation boundaries, which often influences policy thinking globally.",
+      "potential_use": "Use this in workshops as a case study for defining AI agent scope: what can be delegated to an autonomous system, and what must remain in human hands? Build a decision framework with participants around three axes—security (credential exposure), compliance (regulatory requirements), and operational feasibility (can the system reliably authenticate intent?). This also works as a consulting diagnostic: audit your clients' AI implementations for similar blind spots where autonomous action violates regulation or creates unacceptable security surface.",
+      "sources": [
+        {
+          "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/"
+        }
+      ]
+    },
+    {
+      "slug": "google-search-gemini-4-hydrogen-upgrade",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 6,
+      "headline": "Google Search deploys Gemini 4 Hydrogen for complex query understanding",
+      "dek": "The model handles multi-part questions, typos, and visual reasoning at scale across all Search users globally.",
+      "summary": "Google has rolled out Gemini 4 Hydrogen as a major model upgrade to its core Search product, available immediately to all users worldwide. The upgrade focuses on four capability areas: better intent understanding (including handling multi-part questions and garbled typos), improved query fan-out that finds a broader range of relevant sites by exploring subtopics simultaneously, richer visual responses including images and comparison tables, and deeper language understanding across all supported languages.\n\nThe deployment demonstrates how instruction-following and tool-calling capabilities are being scaled in production. The query fan-out improvement is particularly notable—it uses advanced reasoning to understand what a question really needs, then conducts parallel searches across relevant subtopics to surface sites users might otherwise miss. This moves beyond simple keyword matching toward understanding the logical structure of a question.",
+      "why_it_matters": "For your AI education work and expertise-building: this is a concrete example of multimodal reasoning and complex instruction-following deployed at real scale (billions of users). It shows how current LLM capabilities in handling ambiguous language and reasoning over multiple constraints are moving from research demos to consumer products. The visual reasoning layer—adaptive responses built around images and structured data—illustrates how models are being layered with retrieval and formatting logic for practical use.",
+      "potential_use": "Use this as a workshop case study on LLM deployment: discuss the gap between model capability and production systems (intent understanding alone isn't enough—you need query expansion, ranking, and visual layout logic). Also covers a practical angle for Applicative AI consulting: how to architect retrieval + reasoning + formatting pipelines when existing systems (like Search) become AI-first.",
+      "sources": [
+        {
+          "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+          "publisher": "Google AI Blog",
+          "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/"
+        }
+      ]
+    },
+    {
+      "slug": "softbank-natural-gas-turbine-loss",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 6,
+      "headline": "SoftBank's $3 billion turbine loss signals shift away from natural gas for AI",
+      "dek": "The company overbought power-generation equipment to corner the AI energy market, but data center operators are moving toward grid connections and batteries instead.",
+      "summary": "SoftBank placed deposits on more than 13 gigawatts of natural gas turbines starting roughly two years ago—about 50% more than it needed. The strategy was calculated: with turbine order queues extending into the early 2030s, Masayoshi Son's energy subsidiary bet that hyperscalers desperately seeking power for data centers would have to come to SoftBank. The company paid nonrefundable deposits to secure supply, operating on the assumption that AI's electricity demand would sustain indefinitely at soaring levels.\n\nThat bet misfired. SoftBank announced a $7.1 billion quarterly loss this week, with over $3 billion tied to power equipment the company now considers worthless. Analysts frame it less as a catastrophe and more as expensive price discovery. The company overbought to avoid underbidding; instead, it massively overbid and over-ordered.\n\nHowever, data center operators are rethinking the natural gas playbook. As they gain real operating experience, they're finding that grid connections paired with large battery storage for peak shaving and demand response may be more cost-effective than dedicated gas plants. Winter curtailments and volatile supply dynamics also make natural gas riskier than it initially appeared. The shift suggests AI's electricity infrastructure is maturing past the panic-buying phase into more measured, hybrid approaches.\n\nThe losses won't trigger a collapse in gas plant development—AI's power hunger remains too large—but they do mark a practical ceiling on how aggressively natural gas will be deployed relative to grid and battery alternatives.",
+      "why_it_matters": "This case study illustrates a core economic reality for anyone scaling AI systems: infrastructure dependencies don't move at the speed of software iteration. SoftBank's billion-dollar miscalculation shows how quickly assumptions about power availability and cost can become obsolete when real operational data arrives. For your consulting work, it's a concrete example of why AI deployment economics demand both technical and energy-market literacy—and why overconfidence in a single energy source, however logical it seemed, extracts measurable costs. For your India ecosystem tracking, it underscores how globally financed AI infrastructure bets are being recalibrated; similar overbooking and rebalancing dynamics will likely emerge in India's power and data center sectors as hyperscalers move beyond early commitments.",
+      "potential_use": "Use this as a workshop case study on infrastructure economics and risk in AI scaling: have participants analyze why SoftBank's 50% overbuy seemed rational ex-ante, then trace how operational reality shifted the economics. For consulting: it's a template for advising clients on energy procurement strategy—the lesson is that hybrid approaches (grid + storage + some dedicated generation) hedge better than single-source bets. For India tracking: monitor how local data center operators, hyperscalers, and power firms react to similar global signals; watch for whether India's renewable energy commitments become a competitive advantage as gas becomes less certain, or whether similar over-ordering mistakes repeat.",
+      "sources": [
+        {
+          "title": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/"
+        }
+      ]
+    }
+  ]
+}
