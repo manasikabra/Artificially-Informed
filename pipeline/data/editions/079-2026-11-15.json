@@ -1,0 +1,48 @@
+{
+  "number": 79,
+  "date": "2026-11-15",
+  "stories": [
+    {
+      "slug": "datasette-llm-openai-compatible",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Datasette-llm 0.1a11 adds OpenAI-compatible endpoint support",
+      "dek": "The plugin now works with any LLM server that speaks the OpenAI protocol, including Ollama and LM Studio running locally.",
+      "summary": "Datasette-llm, a plugin that bridges language models and the Datasette data querying tool, released version 0.1a11 with support for OpenAI-compatible API endpoints. This means teams can point Datasette at any LLM server that implements the OpenAI protocol—whether cloud-hosted or running locally via Ollama, LM Studio, or llama.cpp (which itself hit v1.0.0 recently).\n\nThe practical upshot: you can now spin up a Datasette Agent (an LLM-powered interface to databases) backed by a local model without vendor lock-in or external API calls. An example workflow shows running this via uvx with a local Qwen model, configuring the endpoint and model details in JSON, then immediately querying a database through an LLM-aware interface from the command line.",
+      "why_it_matters": "For Applicative AI, this is a concrete pattern for integrating LLMs into data-centric workflows—exactly the kind of real-world application your clients ask about. It shows how to decouple model choice from tooling, which matters both for cost control and for teaching practitioners that LLM integration needn't lock you into a single provider. The local-first capability also directly speaks to privacy and compliance concerns that crop up in enterprise consulting.",
+      "potential_use": "Use this as a workshop demo: show how to wire a local Ollama or LM Studio instance to Datasette, then live-query a database with an LLM backend. Demonstrates practical model flexibility and the shape of modern data-aware AI tooling. Good teaching case for why API abstraction layers (like the OpenAI spec becoming a de facto standard) matter for practitioners.",
+      "sources": [
+        {
+          "title": "datasette-llm 0.1a11",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/"
+        }
+      ]
+    },
+    {
+      "slug": "ai-project-failures-case-studies",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "l-and-d"
+      ],
+      "relevance_score": 6,
+      "headline": "What AI projects are failing: a catalog of shutdowns and missed expectations",
+      "dek": "From Character.ai bankruptcy to OpenAI's discarded side projects, failure patterns reveal execution gaps and market timing missteps.",
+      "summary": "The AI industry has accumulated a substantial list of casualties. Character.ai, once valued at $1 billion and backed by Google, filed for bankruptcy in October despite raising $150 million. OpenAI has shelved several products: ChatGPT Atlas (an AI browser) lasted under a year; Operator (a task-automation agent) was folded into the main app; Sora (video platform) shut down in March 2026 after struggling with operating costs and retention. Even Apple's widely promoted Siri AI, announced in 2024 as a centerpiece of Apple Intelligence, suffered repeated delays due to engineering issues before finally shipping in beta this July.\n\nBeyond high-profile names, smaller plays failed for consistent reasons. Relay, a Zapier alternative, couldn't survive once Google and OpenAI baked automation directly into their platforms. Ollie, a family-focused AI agent with privacy certifications, couldn't differentiate against better-funded competitors. Notion Mail launched in 2025 to organize email but was shut down after users simply switched to separate AI agents for the same job. Humane AI Pin and Rabbit R1, both heavily hyped hardware products, launched underperforming and either shut down (Humane) or stalled (Rabbit).\n\nAccording to S&P Global Market Intelligence, roughly 42% of corporate AI initiatives are abandoned by their sponsors. The failure modes break down into a few clusters: insufficient funding or revenue (Relay, Ollie, Figgs AI); technical execution gaps (Apple Siri, Microsoft Recall's privacy flaws, Rabbit's unfinished state); architectural missteps (OpenAI's super-app redesign, Notion Mail's feature cannibalization); and competition from larger platforms absorbing the same functionality (Huxe's podcast audio, ChatGPT Atlas's browser features). Some failures carry reputational risk: Character.ai faced litigation over teen self-harm, while Microsoft's Recall triggered sustained privacy backlash even after redesign.",
+      "why_it_matters": "For practitioners building or advising on AI initiatives, this catalog directly illustrates the gap between funding and viability. Your consultancy needs to spot the real distinctions: 42% corporate abandonment isn't random noise—it reflects poor product-market fit diagnosis, underestimated execution complexity (Siri's multi-year delays), and the speed at which incumbents replicate working ideas. For your workshops, this is prime material on why an AI project feels technically sound but still collapses, and how to audit assumptions before committing capital.",
+      "potential_use": "Build a workshop exercise around the \"failure pattern audit\": give participants a nascent AI product concept and have them classify it against the observed failure modes (cannibalization risk, funding runway, differentiation decay, execution complexity, regulatory/reputation risk). Use Character.ai as a case study on scaling without sustainable unit economics, and OpenAI's abandoned features as a teaching point on the cost of premature consolidation. For India ecosystem tracking, monitor whether India-based AI ventures are repeating these patterns—particularly the Relay/Ollie archetype of being displaced by better-capitalized global platforms.",
+      "sources": [
+        {
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/"
+        }
+      ]
+    }
+  ]
+}
