@@ -1,0 +1,150 @@
+{
+  "number": 82,
+  "date": "2026-11-18",
+  "stories": [
+    {
+      "slug": "openai-gpt-6-2-astra-sol-released",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 9,
+      "headline": "OpenAI releases GPT-6.2 Astra and Sol with improved coding and computer use",
+      "dek": "Two new models bring lower costs and better performance on professional tasks across ChatGPT Work, Codex, and the API.",
+      "summary": "OpenAI announced GPT-6.2 Astra and Sol, expanding its model family with improvements across coding capabilities, computer use automation, and professional output quality. The release targets three deployment points: ChatGPT Work for direct user access, Codex for specialized programming tasks, and the broader API for developer integration.\n\nThe models are positioned to deliver better efficiency—handling more complex work at lower cost compared to prior generations. This addresses a core constraint in current LLM deployment: the tension between capability depth and operational expense. For teams building on top of GPT models, the cost reduction creates more room for experimentation and production scaling.",
+      "why_it_matters": "For your consulting and workshop practice, these models directly expand what you can reliably build and demo—particularly around coding automation and agent-like computer use, which remain active capability frontiers. The cost shift also changes the economics of which solutions are worth prototyping versus which require more careful architecture. Understanding Astra and Sol's boundaries and strengths is table-stakes for advising clients on what's now practical to implement.",
+      "potential_use": "Use Astra and Sol to build and test new workshop demos around coding and computer automation scenarios; map their cost-performance profile against GPT-4 and Claude baselines to inform client architecture decisions; include capability benchmarks in your AI readiness assessments for Applicative AI engagements.",
+      "sources": [
+        {
+          "title": "Introducing GPT-6.2 Astra and Sol",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+        }
+      ]
+    },
+    {
+      "slug": "external-sandboxes-coding-agents",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 8,
+      "headline": "Three open-source sandbox servers isolate code execution from AI agents",
+      "dek": "Simon Willison and Prime Radiant released implementations using WebAssembly, containers, and QEMU to safely run untrusted agent-generated code.",
+      "summary": "Simon Willison has documented and released reference implementations for an \"external sandbox\" pattern—a security architecture where code executed by AI coding agents runs in an isolated sandbox while the agent itself remains outside it. This separates the agent from the execution environment, protecting against both mistakes and prompt injection attacks.\n\nThree sandbox server implementations are now available, each exposing the same localhost API: external-sandbox-v86 uses Node.js and v86 to run Alpine Linux in WebAssembly; external-sandbox-container runs Alpine in Apple Containers via Python; and external-sandbox-quicksand uses Microsoft's Quicksand library bundling QEMU and Alpine. Any of these can be configured to intercept agent code execution requests.\n\nBoth implementations include an HTTP/HTTPS allow-list proxy to restrict which hosts the agent's code can reach, and a credential replacement mechanism that lets sandboxed code make authenticated API calls without exposing secrets to the agent itself. The proxy can be reconfigured live without restarting the sandbox.",
+      "why_it_matters": "For your consulting practice and workshops, this pattern directly addresses a core technical risk when deploying local or semi-trusted models: agents that generate and execute code need isolated execution environments to prevent accidental damage or deliberate compromise. These reference implementations give you concrete, battle-tested approaches to teach and deploy. For India's AI ecosystem, as more practitioners build agent systems locally, having accessible open-source sandboxing patterns reduces the barrier to safe experimentation.",
+      "potential_use": "Use these implementations as teaching demos in your workshops to show how agent safety works in practice—compare the three approaches (WebAssembly vs. containers vs. QEMU) to illustrate different sandboxing trade-offs. For client projects building coding agents, these become reference architectures you can adapt or recommend. Consider documenting a case study adapting one of these for a specific use case your clients face.",
+      "sources": [
+        {
+          "title": "External sandboxes for coding agents",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/"
+        }
+      ]
+    },
+    {
+      "slug": "model-ml-raises-250m-banking-automation",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 8,
+      "headline": "Model ML raises $250M to automate investment banking workflows with contextual AI agents",
+      "dek": "The London startup uses open-source models to cut the cost of financial AI automation to about 2% of frontier-model pricing.",
+      "summary": "Model ML, a three-year-old London startup founded by brothers Chaz and Arnie Englander, has raised $250 million in Series B funding at a $1.5 billion valuation. General Atlantic and existing investor QED Investors co-led the round, which comes a year after the company's $75 million Series A.\n\nThe startup builds AI agents that integrate directly into investment banking and consulting workflows—plugging into Excel, PowerPoint, and clients' internal systems to handle tasks traditionally assigned to junior bankers: building financial models, writing pitch decks, and preparing due diligence reports. The core advantage Model ML claims is contextual understanding: its agents comprehend the full scope of a deal and automatically propagate changes across models and presentations when new information emerges.\n\nModel ML's commercial strategy centers on cost efficiency. By running on open-source models rather than frontier offerings from Anthropic or OpenAI, the company achieves results at roughly 2% of the cost and with faster execution. This positions it against other entrants like Hebbia and Rogo, which also target banking and consulting automation—Rogo raised $160 million at a $2 billion valuation in April 2026.",
+      "why_it_matters": "Model ML is a concrete example of agentic AI solving a narrow, high-value problem in knowledge work: understanding deal context and automating the propagation of changes across interdependent documents. For your workshop and consulting practice, it illustrates how AI agents add value not just by replacing individual tasks but by maintaining consistency across related artifacts—a pattern applicable well beyond banking. The open-source-model approach also signals a viable cost arbitrage for specialized domain agents, relevant if you're advising clients on where custom agents beat or complement frontier models.",
+      "potential_use": "Workshop demo: show how Model ML's agents connect context (deal facts, client data) to multiple outputs (models, decks, reports) and auto-sync them—useful for illustrating agent workflows in practice. For Applicative AI: explore similar automation opportunities in other industries where junior-level staff spend time on repetitive but interconnected analytical work (legal, consulting, real-estate due diligence, regulatory reporting).",
+      "sources": [
+        {
+          "title": "Model ML raises $250M to automate investment banking grunt work",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work/"
+        }
+      ]
+    },
+    {
+      "slug": "openai-chatgpt-sales-plugin",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "OpenAI launches ChatGPT for Sales with CRM and prospect-research plugins",
+      "dek": "30+ partner integrations let sales teams research prospects, draft pitches, and update records directly from ChatGPT.",
+      "summary": "OpenAI has released ChatGPT for Sales, a workflow-focused feature bundling a dedicated sales plugin with more than 30 partner integrations. The system connects directly to CRM platforms and prospect databases, automating parts of the sales cycle: research on target companies and decision-makers, pitch preparation, customer record updates, and deal tracking.\n\nThis move positions ChatGPT as a tool for specific job functions rather than general chat. Sales teams get a narrower, more integrated experience than a generic LLM would provide. The partner ecosystem—drawn from both enterprise software (CRM vendors, data providers) and AI-native companies—suggests OpenAI is pursuing a platform-integration strategy rather than trying to replace existing sales tools.",
+      "why_it_matters": "This is a textbook example of AI applied to knowledge work: LLMs handling the research and drafting tasks that consume sales time, while integrations keep data synchronized. For your consulting work, it shows how enterprises are thinking about AI adoption—not as a standalone tool but as middleware that plugs into existing workflows. For workshops, it's a concrete case study in process automation beyond customer service. And it hints at how India's enterprise AI adoption will likely flow: through tool integration and workflow redesign rather than wholesale system replacement.",
+      "potential_use": "Use this as a workshop example of vertical AI deployment: how ChatGPT's generic capabilities are being packaged for a specific role and connected to domain systems. You could also position similar integrations as a consulting service—mapping sales workflows, identifying automation points, and building the middleware layer between LLMs and CRM/ERP systems for Indian B2B firms.",
+      "sources": [
+        {
+          "title": "Introducing ChatGPT for Sales",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/introducing-chatgpt-for-sales"
+        }
+      ]
+    },
+    {
+      "slug": "pedestal-ai-supply-chain-agents",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Pedestal AI raises $4.7M to deploy agents across supply chain delivery",
+      "dek": "The startup cut missed deliveries by 20% for a furniture client by using agents to handle customer outreach before delivery.",
+      "summary": "Pedestal AI emerged from stealth Tuesday with $4.7 million in seed funding to deploy purpose-built AI agents in supply chain operations. The startup's core insight is that modern supply chains generate messy, disparate data buried across legacy systems—data that agents can structure and act on in real time.\n\nIn a customer deployment for a furniture company, Pedestal agents called customers 30 minutes before scheduled deliveries to collect special instructions. If calls failed, automated texts followed. This single intervention cut missed deliveries by 20% while generating detailed feedback on bottlenecks in the existing process.\n\nCEO Raj Aggarwal argues that delivery logistics are particularly well-suited to agent training because volumes are high, outcomes are measurable, and optimization has immediate financial impact. The company has already secured pilots with Fortune 500 firms and major shipping operators. The funding round was led by Eclipse and included RRE, Converge VC, Timescale Ventures, and VitalStage.",
+      "why_it_matters": "Supply chain optimization is a proven domain with tight feedback loops and clear ROI—making it a credible proving ground for agentic AI. For your consulting work, this shows how agents move beyond research into production systems where measurable outcomes justify client investment. It also illustrates a pattern: autonomous driving alumni (Tesla's Atomic, Uber's Loop) are reshaping supply chain startups, suggesting that reinforcement learning and embodied reasoning carry across domains.",
+      "potential_use": "Use Pedestal's furniture company case (20% reduction in missed deliveries via pre-delivery customer contact) as a concrete workshop example of how agents reduce friction in operational workflows. Consider supply chain optimization as a near-term consulting opportunity—this is a space with real budget, clear metrics, and growing technical depth.",
+      "sources": [
+        {
+          "title": "Pedestal AI raises $4.7 million to agentify the supply chain",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/"
+        }
+      ]
+    },
+    {
+      "slug": "decision-models-customization-frontier",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Decision models shift focus to customization as adoption surges past LLM use",
+      "dek": "Sqwish and hyperscalers race to build tuning tools that let enterprises improve models with their own production data.",
+      "summary": "Decision models—LLMs optimized to pick between preset options with confidence scores, not generate text—hit a critical inflection point in October. Vercel's AI router saw one in four requests route to decision models rather than frontier LLMs, only a month after the category's invention with TypeSafe's Jev family. The speed and cost advantages for production systems drove rapid adoption: every hyperscaler shipped its own variant, and Microsoft rolled out Decision-1.1 for Azure this week.\n\nAs the category commoditized, differentiation shifted to data. TypeSafe's Jev dominates partly through careful calibration using synthetic data. Sqwish, a Cambridge-founded startup that just raised $3 million pre-seed, positions itself differently: it offers built-in tools letting customers upload their own production data to continuously improve the model's judgment on tasks specific to their business. CEO Ushnish Sengupta frames this as the barrier against commodity status—customers can keep tuning models without switching providers.\n\nBenchmarks matter less than real-world context. Both Sqwish and Microsoft's Achint Srivastava noted that models optimized purely for benchmark scores often falter in live enterprise conditions. The practical test is straightforward: drop in a new model, measure performance on your actual use case, and decide whether to stick with it. For Sqwish, the hook is continual tuning; for hyperscalers, it's reliability across cost, latency, accuracy, and calibration in a single model.",
+      "why_it_matters": "Decision models are establishing a new production pattern worth teaching—a category where speed and reliability matter more than reasoning depth, and where customization with proprietary data becomes the moat. For your consulting work, this speaks directly to how enterprises will want to build AI: not with generic frontier models, but with tuned systems that learn from their own workflows. The focus on post-training customization also hints at where smaller specialized players can compete with hyperscalers on enterprise projects.",
+      "potential_use": "Use decision models as a workshop module on specialized vs. general architectures in AI—when to route tasks to smaller, faster models vs. frontier LLMs. For consulting: identify decision-making bottlenecks in clients' operations (approval workflows, triage, routing) and model how decision models could improve speed and cost. For India's AI ecosystem: watch for local startups building similar post-training customization tools, as this pattern could apply across fintech, logistics, and e-commerce workflows that need fast, tuned decisions.",
+      "sources": [
+        {
+          "title": "As decision model use skyrockets, is customization the next frontier?",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/17/as-decision-model-use-skyrockets-is-customization-is-the-next-frontier/"
+        }
+      ]
+    },
+    {
+      "slug": "daydream-ai-stylist-shopping-agent",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases"
+      ],
+      "relevance_score": 6,
+      "headline": "Daydream launches AI shopping agent that recommends, tries on, and buys clothes",
+      "dek": "The fashion startup's agent integrates styling advice, virtual try-on, and one-click checkout across 10,000+ brands.",
+      "summary": "Daydream, Julie Bornstein's e-commerce startup, released Daydream Agent on Tuesday, an AI system designed to act as a personal stylist. The agent learns each user's taste, fit preferences, and budget, then surfaces recommendations, allows virtual try-ons from uploaded photos, and can complete purchases directly. It also monitors sales, tracks new brand drops, and helps users plan outfits against their existing closet and calendar.\n\nThe agent pulls real-time pricing and inventory from Daydream's catalog of over 10,000 brands. Under the hood, it combines fine-tuned versions of OpenAI, Gemini, and Claude models with Daydream's own fashion-specific models. To keep human judgment in the loop, the company this month hired fashion stylist Francesca Salih as its first stylist in residence; her styling guidance shapes how the agent assembles outfits and informs the system's fashion knowledge database.\n\nDaydream has gained 2 million users since launching as an AI search engine in June 2025. The company raised $50 million from Forerunner Ventures, Index Ventures, GV, and True Ventures. The timing aligns with early adoption data: Meta's Muse consumer agent, which 25% of daily users rely on, has identified shopping as one of its top use cases.",
+      "why_it_matters": "This is a concrete blueprint for agentic AI in a mature, high-friction transaction domain: the agent handles discovery, personalization, and execution—all three legs of a customer journey. For consultancy work and workshops, it exemplifies how agents integrate advisory functions (styling) with real commerce infrastructure (checkout, inventory), and shows a defensible pattern where fine-tuned models + human expertise can outperform generic LLMs alone in a subjective domain.",
+      "potential_use": "Use this as a workshop case study: walk through the technical layers (multi-model orchestration, real-time data integration, one-click transaction flow) and the human-in-the-loop design (stylist-informed database). For retail or e-commerce consulting, this model—agent as transaction accelerator, not just chatbot—is directly applicable to other categories where personalization drives higher conversion.",
+      "sources": [
+        {
+          "title": "Daydream’s new AI agent acts as your personal stylist — and can shop for you, too",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/17/daydreams-new-ai-agent-acts-as-your-personal-stylist-and-can-shop-for-you-too/"
+        }
+      ]
+    }
+  ]
+}
