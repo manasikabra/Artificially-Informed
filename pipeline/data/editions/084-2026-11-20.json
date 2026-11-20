@@ -1,0 +1,109 @@
+{
+  "number": 84,
+  "date": "2026-11-20",
+  "stories": [
+    {
+      "slug": "gemini-tool-retrieval-api",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 8,
+      "headline": "Google's Gemini API now retrieves tools on demand to cut agent token costs",
+      "dek": "Tool Retrieval loads parameter schemas only when needed, keeping hundreds of tools available while reducing input tokens and improving accuracy.",
+      "summary": "Google has rolled out Tool Retrieval as a preview feature in the Gemini Interactions API. The feature addresses a core scaling problem: when AI agents connect to dozens or hundreds of tools, sending every tool's full parameter schema in every request inflates token counts, adds latency, and degrades tool-selection accuracy.\n\nThe mechanism is straightforward. Developers add a tool_search tool to their request and mark unused tools with defer_loading: true. The model still sees each deferred tool's name and description—so it knows what's available—but the full parameter schemas remain outside the context window. When the model needs a specific tool, it asks for it by name, the API retrieves and loads the schema, and the model calls the function, all within a single request.\n\nGoogle offers two retrieval modes. Server-side retrieval requires no code changes beyond adding the tool_search tool and the flag; Gemini runs the search and loads schemas as needed. Client-side retrieval lets developers maintain their own tool registry or permission system; the model calls a search function, the application returns matching schemas, and execution continues. This mode adds one round trip per search but enables mid-conversation tool exposure—useful for integrations or dynamic capabilities.\n\nPricing is unaffected: Tool Retrieval has no separate charge, and schemas are billed as standard input tokens whether loaded on demand or declared upfront. The feature works with Gemini 3.6 and all Gemini 4 models. It also integrates with prefix caching and remote MCP servers, so agents can connect large tool servers without listing every capability individually.",
+      "why_it_matters": "For anyone building multi-tool AI agents, this directly solves the token efficiency problem that emerges as agent capability libraries grow. It's immediately applicable to Applicative AI's focus on practical agent workflows and automation—your workshop participants and consulting clients need this pattern to scale agent applications in production. Understanding when and how to defer tool loading is now a core competency for AI engineers.",
+      "potential_use": "Use this as a workshop demo showing the anatomy of a scalable AI agent: build a customer-service agent that handles dozens of operations (refunds, shipping, account changes, etc.) and show how to structure tool declarations and schema retrieval to stay within token budgets while maintaining tool-selection accuracy. This directly illustrates agent architecture tradeoffs—a teaching moment on practical constraints in production AI systems.",
+      "sources": [
+        {
+          "title": "Introducing Tool Retrieval in the Gemini API",
+          "publisher": "Google AI Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+        }
+      ]
+    },
+    {
+      "slug": "openai-performance-factory-chatgpt-speed",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "OpenAI's Performance Factory automates detection and repair of ChatGPT slowdowns",
+      "dek": "The system uses Codex-powered workflows to continuously monitor and fix performance bottlenecks in production.",
+      "summary": "OpenAI has built the Performance Factory, an automated system that identifies and resolves performance issues in ChatGPT at scale. Rather than relying on manual debugging or retrospective analysis, the system uses Codex-powered workflows to actively monitor ChatGPT's behavior and detect slowdowns. When problems are found, the same tooling automatically generates and validates fixes, keeping the service responsive.\n\nThis is infrastructure thinking applied to AI reliability. Most production AI teams face the tension between speed and correctness—serving users quickly while maintaining output quality and system stability. OpenAI's approach treats performance optimization itself as a workflow that can be systematized and partially automated, reducing the cognitive load on engineers and accelerating the feedback loop between problem detection and resolution.\n\nThe system represents a broader category of internal tooling that separates leading AI labs from earlier-stage efforts: not just building the model, but building the operational systems that keep it performant under real-world load.",
+      "why_it_matters": "For anyone building or deploying AI applications at scale, this illustrates a key operational layer that often gets overlooked in the rush to implement models. ChatGPT's speed is partly technical (model architecture, inference optimization) but also organizational—the systems and processes that catch problems before they reach users. As you work with clients on production AI applications, understanding how to systematize performance monitoring and remediation (rather than treating it as incident response) will shape what's actually reliable and ship-ready.",
+      "potential_use": "Use this as a case study in workshops on deploying AI systems: walk through what a \"performance feedback loop\" looks like for a large inference system, and have participants design a simplified version for a hypothetical service. Also applicable when advising clients on internal tooling priorities—helping them see that after model training and integration, the next tier of investment should often be automated observability and remediation for the production system.",
+      "sources": [
+        {
+          "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast"
+        }
+      ]
+    },
+    {
+      "slug": "google-gemini-computer-use-mac",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Google brings desktop AI agents to Gemini on Mac with computer-use capability",
+      "dek": "The feature lets users delegate multistep workflows like form-filling and file organization to Gemini, with live preview and manual approval gates.",
+      "summary": "Google rolled out computer-use capability to Gemini on macOS, joining competitors OpenAI, Anthropic, and Meta in offering AI agents that can directly manipulate user systems. The agent can navigate Mac apps and websites, tackle file organization, batch repetitive tasks across documents, fill forms, and assemble slideshows from disparate sources—all while keeping the user's screen and cursor free for parallel work. Users see the agent's actions in real-time within the chat interface and retain the ability to pause, stop, or approve tasks before execution.\n\nThe feature is currently gated to U.S. English speakers with a Gemini app for Mac and a Gemini AI Plus, Pro, or Ultra subscription. Google has not announced expansion to other regions or platforms, nor a timeline for broader availability. The company framed the capability as particularly useful for high-friction knowledge work: form-filling, repetitive task batching, file organization by rules, and content assembly from web dashboards. The rollout follows Google's earlier announcements of Tasks (an in-app agentic feature for bookings and purchases) and the limited-access \"CC\" agent (designed for family coordination across email, calendars, and chats).",
+      "why_it_matters": "Desktop AI agents operating directly on user systems represent a material shift in practical AI deployment—moving from chat-based assistance to autonomous workflow execution. For Applicative AI, understanding how these agents validate and safeguard actions (approval gates, preview modes) is essential to advising clients on real-world agent deployments. The specific use cases Google highlights (batch file operations, form-filling, structured data assembly) also expose the gap between marketed capability and genuine complexity in multistep reasoning across heterogeneous local systems.",
+      "potential_use": "Use this as a workshop case study on AI agent architecture and user control: map the approval/pause gates as trust and safety friction points, then discuss how these tradeoffs shift when scaling to enterprise workflows. Alternatively, prototype a constrained version of computer-use for Applicative AI clients in knowledge-heavy roles (compliance, HR ops, financial reporting) where batch file operations and form-filling produce measurable time savings—and document the failure modes that Google's approval model is designed to prevent.",
+      "sources": [
+        {
+          "title": "Google gives Gemini the ability to use your Mac for you",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/"
+        }
+      ]
+    },
+    {
+      "slug": "token-fraud-threatens-ai-products",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Token fraud spreads across AI products as abusers exploit free trials at scale",
+      "dek": "ChatPRD's founder says scammers are running trial-cycling loops to resell API access or build commercial services on top of her agent.",
+      "summary": "Claire Vo, founder of ChatPRD—an AI product that turns ideas into product specs—has observed a growing wave of coordinated token fraud targeting her platform's free trial. Groups are cycling through free trials and promotional codes, then tunneling into the underlying agent to access AI tokens at no cost or to resell them. Some are running full commercial operations on the free compute, including one international game studio running map-building loops for Roblox and Fortnite.\n\nThe fraud extends beyond simple token theft. Willison notes that scammers are sending specific test prompts—including SVG images of pelicans riding bicycles—through agents to fingerprint which underlying model powers the system. This reconnaissance technique helps abusers understand model capabilities and identify stealth or beta deployments. In response, Vo has decided to wind down free trials entirely, treating the abuse as serious enough to abandon an acquisition channel that might otherwise attract legitimate users.",
+      "why_it_matters": "This demonstrates a concrete attack surface that any consultant building LLM-backed SaaS products needs to design for: free trials and promo codes are economically tempting but operationally risky, and usage monitoring alone may miss coordinated, low-noise fraud. For your workshop discussions on responsible AI deployment, this is a live example of how traditional startup growth tactics clash with API economics.",
+      "potential_use": "Use this as a concrete case study when teaching AI product teams about security modeling—specifically around freemium mechanics and cost controls. It also illustrates a hidden cost of building on third-party model APIs: you inherit the asymmetry between easy scaling and easy abuse. For India-focused work, this pattern will likely emerge as more domestic startups launch AI-powered SaaS products.",
+      "sources": [
+        {
+          "title": "Token fraud is here and it’s BAD (YouTube)",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/"
+        }
+      ]
+    },
+    {
+      "slug": "apple-developing-macos-ai-agent",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 6,
+      "headline": "Apple reportedly building AI agent for macOS to run apps and code",
+      "dek": "The company is simultaneously raising barriers for third-party agents on its platform.",
+      "summary": "According to a job listing spotted by Bloomberg, Apple is developing an AI agent capable of conducting computer work on behalf of users—browsing the web, switching between applications, executing commands, writing and debugging code, and invoking services. The posting emphasizes that the agent should operate privately and maintain Apple's design standards, moving fluidly across tools and handling multi-step tasks across apps, browsers, command lines, and APIs.\n\nThe move positions Apple alongside Anthropic, OpenAI, and Meta (which launched its Muse agent line), all competing in the heated desktop agent space. However, Apple is taking a defensive stance in parallel: macOS 27.3 will deploy warnings discouraging users from granting third-party agents full system access, with October guidance to developers clarifying that such access requires explicit user action. Bloomberg reports the company hopes to introduce its own agent by late next year, though development remains in early stages.",
+      "why_it_matters": "For your consulting work and workshops on practical AI, this reveals how major platforms are architecting the agent layer differently—Apple is building its own while simultaneously constraining competitors' reach on its OS. Understanding this competitive playbook matters: it shows how hardware and OS control give incumbents leverage to shape the agent ecosystem, and how \"privacy and polish\" messaging can serve both user protection and market positioning. As desktop agents mature, this platform gatekeeping will likely be central to how the technology actually rolls out in enterprises.",
+      "potential_use": "Use this for workshop material on AI competitive strategy: compare how different players (Apple's platform control vs. OpenAI's broad integration vs. Anthropic's API-first approach) position themselves in the agent market. Also relevant to India ecosystem tracking—Apple's market presence in India and how its agent strategy might affect adoption of competitor tools there.",
+      "sources": [
+        {
+          "title": "Apple may be developing its own AI agent that runs your Mac",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/"
+        }
+      ]
+    }
+  ]
+}
