@@ -1,0 +1,28 @@
+{
+  "number": 86,
+  "date": "2026-11-22",
+  "stories": [
+    {
+      "slug": "ai-agents-text-messaging-landscape",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d",
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Seventeen AI agents now live in your text messages—here's what they can do",
+      "dek": "From booking reservations to managing family schedules, messaging-first agents skip the app download and handle real tasks on your behalf.",
+      "summary": "A new generation of AI agents is consolidating into text messaging rather than requiring separate apps. These systems can read and act on information scattered across your existing tools—email, calendar, Gmail, Slack—and complete tasks like scheduling appointments, researching trips, booking reservations, or sending emails through natural-language text. The category now spans at least 17 notable implementations, from general-purpose assistants (Instinct, Martin, Rene) to domain-focused tools (Miso for travel, Fambot for families, Caddy for action-driven inbox management).\n\nDesign patterns vary. Some agents proactively reach out when they detect something you might forget or opportunities you'd enjoy (Ask Proxy). Others ask permission before taking action (Maverick). A few run on private cloud infrastructure to handle complex multi-step tasks (Folk). Haven frames itself as a \"digital twin\" that learns your decision-making style rather than just executing commands. Instinct, valued at $10 billion after September funding, has begun assigning dedicated email addresses to agents so they can create accounts and sign up for services independently.\n\nDistribution spans SMS, iMessage, RCS, Telegram, WhatsApp, and Signal. Pricing ranges from free (Comma, Fambot in beta, Haven, Iris) to subscription models at $1/day (Ask Proxy personal), $8.33/month (Folk Pro), $21/month (Martin), or €27/month (Maverick Pro). Some agents bundle family-tier pricing (Ohai from $9.99/month) or enterprise plans ($15–$23 per employee/month for Ask Proxy).",
+      "why_it_matters": "For your consulting practice, this landscape reveals a converging pattern: agents that eliminate friction by meeting users where they already communicate, then orchestrate across backend systems they already use. For workshop design, these implementations show concrete, testable designs for agent autonomy, context retention, and permission models. The domain-specific agents (travel, family, work) demonstrate how agents address real coordination problems, not just chatbot novelty. For India's ecosystem, this category's growth (most launched or entered public beta in 2026) signals where startup capital is moving and which problems attract funding—family coordination, travel, and work automation are likely vectors for Indian product builders.",
+      "potential_use": "In workshops, demo a few contrasts—how Maverick asks permission before action versus Instinct's autonomous email assignment—to teach attendees the tradeoffs between user control and task completion speed. For client consulting, map your client's workflows (family coordination, travel booking, team task management) against these agents to identify quick-win pilots. As a learning artifact, this inventory serves as a reference for agent capability categories: context retention, multi-step reasoning, proactive outreach, permission flows, and backend integration patterns—each worth analyzing for your own AI product thinking.",
+      "sources": [
+        {
+          "title": "Here are the top AI agents that can live in your text messages",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/"
+        }
+      ]
+    }
+  ]
+}
