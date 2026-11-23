@@ -1,0 +1,47 @@
+{
+  "number": 87,
+  "date": "2026-11-23",
+  "stories": [
+    {
+      "slug": "sarvam-105b-1711-voice-agents",
+      "primary_lens": "india-ecosystem",
+      "lenses": [
+        "india-ecosystem",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Sarvam AI releases 105B-1711, cutting voice-agent costs to $0.15 per million tokens",
+      "dek": "The updated model matches Gemini and Gemma on conversational tasks while costing one-fifth to one-third as much, with Indian-language support and consistency improvements.",
+      "summary": "Sarvam AI released Sarvam-105B-1711, a checkpoint of its 105B model trained on upgraded infrastructure, targeting customer support, voice agents, and tool-using workflows. The model's inference price dropped from $0.44 to $0.15 per million tokens—a 66% reduction—while conversational agent performance jumped from 42.6 to 73.9 across eight benchmarks (instruction following, tool use, Indian languages, chat quality).\n\nThe major gains came in real-world agent capabilities. Instruction following on IFBench rose from 32.5 to 82.5; tool use in customer-service scenarios from 46.2 to 85.5; and Indian-language performance from 30.1 to 79.1. On consistency—completing the same task correctly across repeated attempts—the model scored 69.5%, edging Gemini 3.5 Flash-Lite (63.9%) and Gemma 4 31B (62.1%).\n\nSarvam's infrastructure changes enabled both cost and speed gains. Training throughput on Blackwell GPUs doubled by using 8-bit precision, reaching 10,900 tokens per second per GPU. Reinforcement learning cycles cut from 13 to 7 minutes through faster generation and speculative decoding. A quantized version serves 6,000 tokens per second per B200 across 64 concurrent users—twice the previous setup and twice the speed of Gemma 4 31B. For on-premises deployment, the model fits on a single RTX PRO 6000 Blackwell GPU and powers Samvaad, Sarvam's voice-agent platform supporting 12 Indian languages, scoring 68.7 on a released benchmark.",
+      "why_it_matters": "For your India-ecosystem tracking, this represents a step forward in locally-relevant agentic AI: an Indian foundation-model vendor is now competitive on enterprise voice agents and tool use at dramatically lower cost than closed alternatives, with native multilingual and code-mixed support. For Applicative AI's consulting work, the release clarifies the economics of building voice and customer-support systems at scale—and shows how infrastructure improvements (Blackwell, 8-bit training, speculative decoding) translate directly to customer price. For your workshop teaching, the model's open weights and published benchmarks (Samvaad, Tau2, Indic suite) provide concrete ground-truth for agentic capabilities and Indian-language performance.",
+      "potential_use": "Consider a workshop module on \"building consistent customer-service agents\": walk through Sarvam-105B-1711's Tau2 consistency scores and tool-use patterns, then compare the trade-offs against Gemini and Gemma on the same tasks. For India-ecosystem work, track Sarvam's shift from price parity on inference to clear cost leadership on agent workloads—a sign the ecosystem is maturing toward domain-specific advantage. For consulting: voice agents in Indian languages are a live market for Indian enterprises; Sarvam's cost and language performance may now make in-house or partner deployment competitive with API-first strategies.",
+      "sources": [
+        {
+          "title": "Sarvam-105B-1711: a new Sarvam 105B checkpoint",
+          "publisher": "Sarvam AI Blog",
+          "url": "https://www.sarvam.ai/blogs/sarvam-105b-1711"
+        }
+      ]
+    },
+    {
+      "slug": "perplexity-as-ai-progress-metric",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "OpenAI proposes perplexity as shared metric for tracking AI model capability leaps",
+      "dek": "The company released internal pretraining data and argues log-perplexity should become an industry standard for pacing development before new abilities emerge.",
+      "summary": "OpenAI published an argument for adopting perplexity—a measure of how well a model predicts the next token—as a unified metric for comparing AI capabilities across developer labs and informing shared safety standards. The post includes transparency on OpenAI's own pretraining progress from GPT-3.5 through current models, showing how lower log-perplexity correlates with capability jumps: coherent text generation, in-context learning, chain-of-thought reasoning, and emerging strengths in cybersecurity and mathematics.\n\nThe core claim is that perplexity measures something fundamental to model development—compression quality on large datasets—and that this metric alone predicts when transformative capabilities will appear. OpenAI extrapolates that models reaching log-perplexity around 0.68–0.7 could exhibit capabilities not yet discovered or tested. The company acknowledges perplexity has real limitations (doesn't capture downstream task performance, varies across labs, doesn't account for techniques like chain-of-thought), but argues it has proven more durable than task-specific benchmarks, which saturate quickly.\n\nOpenAI proposes an industry framework: developers establish shared norms for evaluating frontier models and jointly commit to perplexity-based limits on development until concrete safety milestones are met—such as advances in monitoring AI behavior comparable to current chain-of-thought auditing. The goal is a common benchmark for pacing capability advances that developers can track across organizations.",
+      "why_it_matters": "For your consultancy and workshops, perplexity offers a rare standardized lens into model capability progression independent of marketing claims or task-specific benchmarks. Understanding this metric lets you assess model progress objectively and anticipate capability emergence—critical for advising clients on when new model generations will unlock new use cases. The proposal also surfaces a real industry tension: transparency on progress metrics aids safety governance but reveals competitive positioning, making it a live debate within AI strategy.",
+      "potential_use": "Use perplexity as a core evaluation framework in your AI workshops to teach participants how capability leaps emerge from incremental metric improvements—it's a teachable bridge between low-level optimization and high-level capability. For consulting clients, you can position perplexity monitoring as a way to forecast when new model capabilities will become relevant to their roadmaps, moving beyond \"new model released\" reactions. Track OpenAI's published log-perplexity benchmarks as a leading indicator for capability shifts to watch across the industry.",
+      "sources": [
+        {
+          "title": "Perplexity and Intelligence",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/index/perplexity-and-intelligence"
+        }
+      ]
+    }
+  ]
+}
