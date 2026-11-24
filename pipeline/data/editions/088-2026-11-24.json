@@ -1,0 +1,172 @@
+{
+  "number": 88,
+  "date": "2026-11-24",
+  "stories": [
+    {
+      "slug": "datasette-agent-0-7a1-fragment-nav",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Datasette-agent 0.7a1 improves navigation for LLM-powered data queries",
+      "dek": "Fragment hash support lets AI agents navigate state changes within database interfaces more reliably.",
+      "summary": "Simon Willison released datasette-agent 0.7a1, an incremental update to the LLM-powered agent tool for querying Datasette databases. The main improvement is support for fragment hash navigation in iframe side panels, allowing chat sessions to open panels that can navigate between different pages within Datasette. This enhancement addresses deeper integration with other Datasette plugins that use fragment hashes to track user interactions and state changes.\n\nThe update was built to resolve bugs in the concurrent datasette-charts 0.2a0 release, suggesting these tools are being developed together as complementary features for data interaction and visualization workflows.",
+      "why_it_matters": "This targets a practical constraint in AI agent development: reliable stateful navigation within complex UIs. For consultants building agent systems, handling fragment-based routing is a real integration problem. It's also a concrete example of how agent tooling is maturing beyond simple API calls toward interactive, multi-step workflows—directly applicable to your workshop demos on AI-augmented data tasks.",
+      "potential_use": "Use datasette-agent as a workshop case study for building agents that maintain state across UI changes. The fragment hash solution is a useful pattern for students building agents that need to interact with JavaScript-heavy interfaces. For Applicative AI's consulting practice, this shows a production use case for agent navigation logic in data workflows.",
+      "sources": [
+        {
+          "title": "datasette-agent 0.7a1",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/24/datasette-agent/"
+        }
+      ]
+    },
+    {
+      "slug": "openai-legal-ai-workflows",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 8,
+      "headline": "OpenAI shows how legal teams use AI to build reusable workflows and connect counsel",
+      "dek": "A webinar with OpenAI, LECG, and Cooley explores AI agents that help in-house counsel maintain business context across external legal work.",
+      "summary": "OpenAI hosted a discussion featuring speakers from LECG and Cooley law firm exploring how in-house legal teams can deploy AI to improve knowledge work. The session focused on three core challenges: how legal teams can embed business context into their workflows, build reusable processes that scale across the organization, and strengthen collaboration between internal counsel and external law firms.\n\nThe case study treats legal work as a workflow problem—one where AI agents can maintain institutional knowledge and consistency across reviews, drafting, and counsel coordination. Rather than treating each legal matter in isolation, teams can structure their AI tools to remember precedents, internal policy, and business priorities, then apply that context automatically to new work. This approach reduces context-switching and helps outside counsel understand the client's specific requirements without repeated explanation.\n\nThe webinar positions this as an enterprise AI application where the value isn't just faster document review, but systematic workflow improvement: building patterns that junior staff, senior partners, and external teams can all draw from.",
+      "why_it_matters": "For Applicative AI, this is a concrete playbook for selling AI agents to knowledge-intensive enterprises. Legal is a natural starting point—high compliance burden, clear workflow steps, measurable efficiency gains—but the pattern (maintain context, automate coordination, scale reusable logic) applies across professional services and internal ops. It's also a live example to use in workshops: how do you move past \"AI speeds up document review\" to \"AI restructures how teams collaborate?\"",
+      "potential_use": "Use this as a workshop case study for enterprise AI design. Invite participants to map their own knowledge workflows (consulting, ops, compliance) and ask: where does context get lost? Where do teams repeat work because information isn't shared? This approach also transfers to India-based legal ops centers and consulting delivery—contextual AI can help distributed teams stay aligned without constant escalation.",
+      "sources": [
+        {
+          "title": "Connected intelligence for in-house legal",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal"
+        }
+      ]
+    },
+    {
+      "slug": "building-agentic-evals-hugging-face",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education",
+        "industry-usecases"
+      ],
+      "relevance_score": 8,
+      "headline": "Hugging Face publishes guide to building reliable agent evaluations",
+      "dek": "The guide walks through evaluating agents on real tasks and shows how small changes in evaluation setup can swing accuracy by 30 percentage points.",
+      "summary": "Hugging Face has published a detailed framework for building and maintaining evaluations for AI agents—systems that use tools and planning to complete tasks beyond simple Q&A. The guide argues that as agent capabilities grow, evaluation design itself becomes a critical variable: each piece of the surrounding software (task specification, harness, environment, verification) affects the final score and can mask or amplify actual model behavior.\n\nThe article traces three eras of evaluation: question-answer benchmarks (MMLU, GPQA) that check knowledge; agentic benchmarks (SWE-bench, WebArena) that measure what an agent actually changes in an environment; and emerging team or swarm evaluations that score coordinated multi-agent outcomes. Agentic evals are now the most prominent in model releases due to enterprise interest, but they're also fragile: researchers auditing Terminal-Bench found accuracy varied by up to 30 percentage points when only the agent harness changed, with the model held constant.\n\nThe guide walks through building an evaluation for a physics lab agent that fits peaks in Raman spectra—an example chosen to show practical domain expertise matters more than starting from scratch. By reusing Harbor (an open harness) and existing Terminal-Bench tasks, the authors could focus effort on adaptation and validation. They built eight synthetic spectra with known ground truth, tested the grader against shortcuts (a script that guessed answers without actually fitting peaks), read agent execution traces to understand why models failed, and reported two metrics: pass@3 (7 of 8 tasks succeeded at least once) and pass^3 (only 1 of 8 passed all three attempts). Most failures came from agents stopping early or missing dependencies, not from incorrect fits—a distinction visible only in traces, not raw scores.\n\nThe underlying argument: evaluations are only credible when methods, code, task data, and evidence are transparent and reusable. Currently 98.2% of model-benchmark scores are reported by only one party. While privacy protections (like double-blind evaluation with secure enclaves) can reduce training data contamination, they can also hide mistakes. Open infrastructure and grading logic let others scrutinize, correct, and rebuild on each other's work.",
+      "why_it_matters": "For your AI consultancy, this provides concrete patterns for structuring agent evaluations—a capability clients will need as they move from chatbot pilots to deployed agents. The framework shows evaluation design is not a final step but an engineering problem with real trade-offs: open traces and graders build confidence, but test-set privacy conflicts with expert review. For your workshops, the physics lab example is immediately teachable: it demonstrates why a single accuracy number can mislead (shortcut detection), how trace inspection catches failure modes that scores hide, and why reusing open infrastructure (harness, task format) saves effort for domain-specific work.",
+      "potential_use": "Use the physics lab walk-through as a workshop module on agent evaluation design: have participants identify what a shortcut solution would look like for their own use case, then discuss what trace data or checks would catch it. For consulting: when a client wants to evaluate an agent pilot, start by mapping their evaluation anatomy (task spec, harness, verifier) against this framework—often the softness is in the verifier, not the model. For India-focused tracking: watch whether Indian startups building agent systems (financial analytics, field automation, enterprise search) adopt open evaluation practices or keep benchmarks proprietary; Hugging Face's emphasis on open infrastructure here positions the hub as a standard reference.",
+      "sources": [
+        {
+          "title": "How to build and maintain an agentic evaluation",
+          "publisher": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/agentic-evals"
+        }
+      ]
+    },
+    {
+      "slug": "anthropic-claude-ship-auto-code-approval",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Anthropic launches Claude Ship to auto-review and approve code changes",
+      "dek": "PR Steward and Claude Approvals agents can now merge code without human sign-off, applying team-defined policies to routine changes.",
+      "summary": "Anthropic released Claude Ship, a suite of AI agents designed to automate code review and approval workflows. The offering includes Code Review (already generally available) and two new beta agents: PR Steward, which fixes failing CI checks and merge conflicts while documenting changes, and Claude Approvals, which applies team-defined approval policies written in natural language.\n\nThe timing reflects a real production constraint: as AI coding agents generate larger volumes of code, human review and approval have become bottlenecks. Anthropic uses Claude to write most of its own code and built Claude Ship to keep pace with that velocity. Teams retain control over escalation rules, spending limits, and can run the approval system in observe-only mode initially.\n\nClaude Ship is rolling out to Claude Team and Enterprise plans for GitHub repositories. The approval functionality remains in beta, and Anthropic recommends starting with a single repository to test workflow changes before wider adoption.",
+      "why_it_matters": "This shows AI agents moving beyond code generation into production decision-making and policy enforcement—automating not just the technical task but the governance layer. For your consultancy, it's a concrete example of how agent systems reduce friction in complex workflows; for your workshops, it demonstrates agentic behavior and state management in real developer environments where you can test framework choices and approval logic design.",
+      "potential_use": "Use Claude Ship as a case study for teaching agent design and task delegation—especially the PR Steward agent's approach to fixing and documenting changes. For Applicative AI, this could anchor a workshop session on when and how to delegate approval authority to AI systems, including guardrails and policy-as-code patterns.",
+      "sources": [
+        {
+          "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/"
+        }
+      ]
+    },
+    {
+      "slug": "glm-54-loop-transformer-coding",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 7,
+      "headline": "Z.ai's GLM-5.4 brings loop transformers to production coding models",
+      "dek": "The model reuses transformer layers across multiple passes to deepen reasoning without ballooning parameter count.",
+      "summary": "Z.ai has released GLM-5.4, its first production model built on a looped transformer architecture. Instead of running each transformer layer once per forward pass, the model iterates over a shared set of layers multiple times, refining internal representations with each cycle. This design deepens the network's reasoning capacity without increasing parameter count—a constraint that matters for inference speed and resource consumption.\n\nThe timing is notable: looped transformers have emerged as a pattern across labs. Thinking Machines Lab deployed the same approach in Inkling 2 Mini, released just days before, using three iterations of middle layers to improve performance on agentic coding tasks that demand stronger reasoning.\n\nGLM-5.4 is not currently available as open weights. Access runs through Z.ai's subscription API (OpenAI-compatible), gated behind a \"Coding Plan\" tier. The model's coding output resembles contemporary offerings from OpenAI and Anthropic in visual quality—a marked shift from GLM 5.1 and 5.2, which produced distinctly idiosyncratic outputs. This normalisation suggests the architecture has matured toward mainstream expectations while retaining its specialized coding focus.",
+      "why_it_matters": "Loop transformers are becoming a standard pattern for depth without scale; understanding this architecture shift matters for advising clients on model selection and reasoning-heavy workloads. For India's ecosystem, tracking when Chinese labs (Z.ai, others) ship production innovations before open-source availability informs your positioning on model access and licensing. For workshops, this is a teachable moment on how parameter efficiency—not just model size—drives capability gains in code and reasoning tasks.",
+      "potential_use": "Use this as a workshop case study on architectural innovation vs. scale: show how loop transformers offer depth without parameter bloat, then compare inference cost/latency across GLM-5.4, Inkling 2 Mini, and standard transformers on the same coding benchmark. For consulting: advise clients evaluating coding models that reasoning architecture (not just benchmarks) now matters for agentic workflows. Flag the gating pattern (Coding Plan tier) as a licensing precedent in the market.",
+      "sources": [
+        {
+          "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+          "publisher": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/23/glm-54/"
+        }
+      ]
+    },
+    {
+      "slug": "richpanel-ai-support-50-percent-automation",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "l-and-d"
+      ],
+      "relevance_score": 7,
+      "headline": "Richpanel automates 50% of customer support in 30 days using multiple OpenAI models",
+      "dek": "CEO says the bottleneck is not AI intelligence but system integration—which Richpanel now handles with an AI manager that sets up other AI agents.",
+      "summary": "Richpanel, a customer-support automation platform, has deployed AI agents to over 300 customers in the past six months, consistently hitting a 50% automation rate within 30 days or offering a full refund. The platform orchestrates multiple OpenAI models for different roles: specialized models for setup and reasoning work, then lighter models to run individual conversations at lower cost.\n\nThe key innovation is what the company calls Boss AI, an AI agent that itself configures other AI agents. Rather than requiring a human engineer to wire each support agent into a customer's backend systems and define its procedures, Boss AI writes those procedures and tool definitions automatically. This solves a real bottleneck—human support teams often use 20-30 tools whose workflows are undocumented, and few companies have the engineering capacity to manually encode that institutional knowledge.\n\nRichpanel's approach mirrors the model specialization seen in production systems elsewhere: GPT-6 Astra and Sol handle the high-stakes setup work where accuracy matters most, while GPT-6 Luna runs the high-volume customer conversations where cost efficiency dominates. Customer satisfaction scores from the AI agents exceeded those of human support staff across deployed accounts.",
+      "why_it_matters": "This demonstrates a viable pattern for customer-facing AI ROI: measurable automation (50% in 30 days), proven across 300 deployments, with a business model (money-back guarantee) that only works if the numbers hold. For your consultancy, it's a concrete case study in multi-model orchestration and task decomposition—using smarter models for setup and cheaper models for execution. For India's AI ecosystem, Richpanel's success at automating support work at scale is a template for cost-conscious deployment in regions where outsourced support is already the norm.",
+      "potential_use": "Use this as a workshop case study on AI agent architecture—specifically how to decompose a complex task (support automation) into specialized sub-agents with different model requirements. Demonstrate the cost-intelligence trade-off in practice. For consulting: when prospects ask \"how much automation can we really achieve?\", Richpanel's 50% guarantee and customer satisfaction wins provide concrete benchmarks to adjust for their industry and starting support setup.",
+      "sources": [
+        {
+          "title": "Richpanel helps companies automate 50% of support in 30 days",
+          "publisher": "OpenAI News",
+          "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support"
+        }
+      ]
+    },
+    {
+      "slug": "sierra-30b-valuation-cx-ai",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Sierra hits $30B valuation on $1.75B round as enterprise customer experience AI matures",
+      "dek": "The customer experience AI platform now serves half of Fortune 50 companies and has doubled its revenue run-rate to $400M in five months.",
+      "summary": "Sierra, the customer experience platform co-founded by former Salesforce co-CEO Bret Taylor, raised $1.75 billion in Series F funding that doubles its valuation to $30 billion—a dramatic jump from $15 billion just six months ago. The round was led by Greenoaks and Lightspeed, with participation from Benchmark, Sequoia, GV, and Tiger Global.\n\nThe valuation surge reflects rapid adoption of AI agents in enterprise customer service. Sierra now serves almost half of Fortune 50 companies, including BNY, HSBC, Wells Fargo, JPMorganChase, and Cox Automotive. The company attributes its revenue acceleration—reaching $400 million run-rate—to an outcome-based pricing model that ties costs directly to customer results.\n\nSierra's approach mirrors other CX AI platforms: build an agent-building platform, partner with model developers for flexibility, and develop protocol standards for agent interoperability with other systems. The company is collaborating with Meta, Stripe, and Walmart on agent protocol definitions. Capital will fund technology expansion and sales growth to outpace rivals including ElevenLabs ($22B valuation), Wonderful ($5B), and Decagon ($4.5B).\n\nA notable detail: Bret Taylor argued at a September conference that most Sierra customers are reassigning contact center work to existing employees rather than replacing them—a distinction that matters for enterprise adoption narratives.",
+      "why_it_matters": "Customer experience is proving to be one of the few enterprise AI domains with demonstrable, rapid adoption and clear ROI. For Applicative AI, this signals a mature consulting opportunity: enterprises are beyond proof-of-concept and deploying agents at scale, which means demand for integration expertise, change management, and competitive positioning. The outcome-based pricing model also suggests a shift in how AI services are sold to risk-averse enterprises.",
+      "potential_use": "Use Sierra's customer roster and revenue trajectory as a data point in workshops on enterprise AI unit economics and ROI measurement. The agent protocol standardization efforts (Meta, Stripe, Walmart) are worth tracking as a consulting angle—enterprises will soon need guidance on building modular agent architectures rather than point solutions.",
+      "sources": [
+        {
+          "title": "Sierra doubles valuation to $30B within six months as demand for AI in CX takes off",
+          "publisher": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/"
+        }
+      ]
+    },
+    {
+      "slug": "sarvam-dictate-indian-language-accuracy",
+      "primary_lens": "india-ecosystem",
+      "lenses": [
+        "india-ecosystem",
+        "industry-usecases"
+      ],
+      "relevance_score": 7,
+      "headline": "Sarvam Dictate outperforms Gemini, AssemblyAI on Indian language dictation",
+      "dek": "The Bangalore-based startup's speech-to-text API covers 22 Indian languages and Hinglish, with 40–47% fewer character edits needed than competitors.",
+      "summary": "Sarvam AI has released Sarvam Dictate, an API that converts speech to text with explicit handling for how people actually speak—restarts, corrections, name misheard, mixed languages. On real dictations up to 60 seconds long drawn from actual use of Sarvam's Kivi app, the system needed 4.2% character edits in English (versus 7.0% for Gemini 3.5 Transcribe and 5.3% for AssemblyAI), and 8.8% edits in Indian languages (versus 15.5% for Gemini and 15.8% for AssemblyAI). Hinglish—Hindi and English mixed—showed even starker separation: 6.6% versus 17.0% and 14.7%.\n\nThe API pairs Sarvam's Saaras v4 speech model with a 105B language model fine-tuned on actual dictations. It accepts vocabularies of up to 1,000 names and terms, letting apps supply context from their domain: CRM records, code variable names, chat contacts. A phonetic matcher filters the vocabulary down to acoustically plausible candidates, then the language model decides which terms to insert based on sentence coherence. Pricing is flat: ₹0.50 per minute of audio.\n\nCritically for India's market, Dictate handles script choice—Devanagari versus transliteration (Latin letters)—as a user preference, not an editing penalty. A speaker can get output in native script with English words in Latin, or everything transliterated. This reflects how multilingual Indians actually write: mixing scripts by necessity and preference, often switching within a single message.",
+      "why_it_matters": "This is a demonstration of competitive Indian foundation-model capability in a narrow, high-value task. Sarvam is benchmarking against global APIs and winning on exactly the use cases that matter to India—multilingual, code-mixed input, mixed-script output. For your consultancy, this signals that Indian AI vendors can ship production-grade language capabilities that incumbents haven't solved; for workshops, it's a concrete case study in how localization (vocabulary, script handling, training data from real usage) compounds accuracy. For India's ecosystem, it shows venture-backed depth in applied language AI beyond chat and translation.",
+      "potential_use": "Use Sarvam Dictate as a workshop example of localization-driven accuracy wins: show how domain vocabulary and script-aware design compound to outperform generic incumbents. For consulting: position dictation APIs as a near-term revenue play for apps serving Indian users who mix languages and scripts—CRM tools, code editors, messaging. Document this as evidence that India's AI stack is now competitive enough to poach use cases from Google and OpenAI in specific verticals.",
+      "sources": [
+        {
+          "title": "Sarvam Dictate: fast, accurate dictation",
+          "publisher": "Sarvam AI Blog",
+          "url": "https://www.sarvam.ai/blogs/sarvam-dictate"
+        }
+      ]
+    }
+  ]
+}
