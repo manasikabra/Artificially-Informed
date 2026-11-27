@@ -1,0 +1,47 @@
+{
+  "number": 90,
+  "date": "2026-11-27",
+  "stories": [
+    {
+      "slug": "training-small-agent-swarms",
+      "primary_lens": "industry-usecases",
+      "lenses": [
+        "industry-usecases",
+        "ai-education"
+      ],
+      "relevance_score": 8,
+      "headline": "Hugging Face trains four-agent swarms to solve tasks with 37% fewer tokens",
+      "dek": "Communication doesn't automatically help—the new guide measures whether agents actually cooperate or just spend more compute.",
+      "summary": "Hugging Face published the first in a practical series on building multi-agent systems that use small, affordable models. The opening post works through a deliberately simple task: four agents, each holding a private integer, must pool their knowledge to sort and return all four numbers. No single agent can solve it alone.\n\nThe researchers trained a shared Qwen 0.6B model to coordinate these agents, using a team reward that penalizes token use. Over 75 training steps, success rose from 6.6% to 82.3%, while token consumption per attempt fell 37%—from roughly 13,000 to 8,000. The agents didn't just message less; they messaged more strategically, increasing broadcasts from 2.4 to 5.7 per team while reducing total tokens.\n\nThe core insight: more agents don't automatically mean better results. An untrained team with eight retries achieved 37.5% success but needed 103,000 tokens per problem. The trained team at a single attempt reached 81% success on held-out problems with far less compute. The series frames this as the central question for multi-agent systems: does cooperation actually help, or are we just burning more budget?",
+      "why_it_matters": "For your consulting work and workshops, this offers a reproducible baseline for multi-agent systems that actually measures efficiency trade-offs—not theoretical but hands-on and implementable on accessible hardware ($50 on two H200s). The post directly challenges the hype around large swarms by showing that training for communication is learnable and measurable. For India's AI ecosystem, this demonstrates how to build capable multi-agent systems without massive compute, using models like Qwen that are increasingly accessible locally.",
+      "potential_use": "Use this as a foundation for workshop demos on multi-agent coordination and reinforcement learning—the integer-sorting task is interpretable and the code is reproducible. For Applicative AI, the matched-budget comparison (trading off agent count, tokens, and performance) is a framework you can adapt to client workflows. The credit-assignment and partial-observability problems they surface are core challenges in any real multi-agent deployment.",
+      "sources": [
+        {
+          "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+          "publisher": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/training-swarms"
+        }
+      ]
+    },
+    {
+      "slug": "llama-cpp-amd-benchmark-dashboard",
+      "primary_lens": "ai-education",
+      "lenses": [
+        "ai-education"
+      ],
+      "relevance_score": 6,
+      "headline": "Hugging Face launches llama.cpp benchmark dashboard for AMD hardware",
+      "dek": "Track inference performance across AMD Ryzen and Radeon GPUs with weekly-updated benchmarks spanning models like Qwen and Gemma.",
+      "summary": "Hugging Face has released a public benchmark dashboard tracking inference performance for llama.cpp across AMD Ryzen and Radeon hardware. The tool lets developers compare prompt processing speed (PP512 test) and token generation throughput (TG128 test) across different models, quantizations, and llama.cpp builds.\n\nThe dashboard runs standardized weekly benchmarks using llama-bench against prebuilt binaries, testing a rotating model set including Qwen, Gemma, Inkling 2 Mini, and mixture-of-experts architectures. Each test includes multiple quantization formats (Q4_K_M, Q8_0, BF16, F16) and runs with and without Flash Attention, using 10 repetitions per configuration for statistical reliability.\n\nThe underlying data—both benchmark workflows and raw results—is stored publicly in Hugging Face's dataset repository in standard JSON Lines format, allowing developers to inspect methodology, build their own charts, or compare against local runs. Currently tested hardware includes Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201).",
+      "why_it_matters": "For practitioners deploying models locally or on cost-constrained hardware, concrete performance data across real-world quantizations directly informs infrastructure choices and deployment economics. The public, reproducible benchmarks reduce guesswork when evaluating whether AMD GPUs suit specific inference workloads—especially valuable as open-source models and quantization techniques evolve weekly.",
+      "potential_use": "Use this as a reference in client workshops when discussing deployment trade-offs between cloud and local inference, or when evaluating hardware ROI for cost-sensitive deployments. The public data is a teaching asset for showing how quantization impacts throughput; consider demonstrating the dashboard in AI infrastructure courses to ground abstract efficiency concepts in measurable numbers.",
+      "sources": [
+        {
+          "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+          "publisher": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+        }
+      ]
+    }
+  ]
+}
